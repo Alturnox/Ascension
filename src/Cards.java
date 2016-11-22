@@ -2,6 +2,7 @@
  * Created by nmolle2 on 14/11/16.
  */
 public class Cards {
+    //test
     Joueur j;
     private String effet;
     private String description;
