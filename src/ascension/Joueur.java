@@ -1,3 +1,7 @@
+package ascension;
+
+import ascension.Deck;
+
 import java.util.ArrayList;
 
 /**

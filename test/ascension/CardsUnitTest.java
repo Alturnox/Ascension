@@ -1,3 +1,6 @@
+package ascension;
+
+import ascension.Joueur;
 import junit.framework.Assert;
 import org.junit.Test;
 

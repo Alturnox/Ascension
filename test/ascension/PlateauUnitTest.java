@@ -1,7 +1,8 @@
+package ascension;
+
+import ascension.Plateau;
 import junit.framework.Assert;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertArrayEquals;
 

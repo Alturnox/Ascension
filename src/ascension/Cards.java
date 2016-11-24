@@ -1,3 +1,7 @@
+package ascension;
+
+import ascension.Joueur;
+
 /**
  * Created by nmolle2 on 14/11/16.
  */
