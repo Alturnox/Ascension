@@ -37,8 +37,9 @@ public class Cards {
         this.description=description;
     }
 
-    public Cards(int runes) {
+    public Cards(int runes, int attaque) {
         this.runes=runes;
+        this.attaque=attaque;
     }
 
 

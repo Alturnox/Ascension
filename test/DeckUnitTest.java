@@ -44,7 +44,9 @@ public class DeckUnitTest {
         deck.piocher(1);
         Assert.assertEquals(c1,deck.hand.get(0));
 
-    } @Test
+    }
+
+    @Test
     public void testPiocherDesCartesPiocherVontDansLaMain() {
         Deck deck = new Deck();
         deck.list=new ArrayList<Cards>();

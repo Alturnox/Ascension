@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by nmolle2 on 18/11/16.
  */
@@ -43,9 +45,20 @@ public class Joueur {
         if (c1.getRunes()>0){
             if (nbRunesDispo>=c1.getRunes()){
                 this.deck.hand.add(c1);
+                nbRunesDispo-=c1.getRunes();
                 return true;
             }
             else return false;
+        }
+        else return false;
+
+    }
+
+    public boolean tuerUneCarteAvecDeLattaque(Cards c1, Cards[] ligneCentrale, ArrayList<Cards> neant) {
+        if (attaqueDispo>=c1.getAttaque()){
+            attaqueDispo-=c1.getAttaque();
+            neant.add(c1);
+            return true;
         }
         else return false;
 
