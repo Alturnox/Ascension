@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f15ec2dc-e336-4291-876e-4d9232c75674" name="Default" comment="Plateau, joueurs , deck, cards ,pas les output">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ascension.iml" afterPath="$PROJECT_DIR$/.idea/Ascension.iml" />
+    <list default="true" id="f15ec2dc-e336-4291-876e-4d9232c75674" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ascension/Deck.java" afterPath="$PROJECT_DIR$/src/ascension/Deck.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ascension/DeckUnitTest.java" afterPath="$PROJECT_DIR$/test/ascension/DeckUnitTest.java" />
@@ -30,9 +29,11 @@
       <file leaf-file-name="DeckUnitTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ascension/DeckUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1235">
-              <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="329">
+              <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+              <folding>
+                <element signature="e#1893#1900#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,8 +41,38 @@
       <file leaf-file-name="Deck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ascension/Deck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+            <state relative-caret-position="261">
+              <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JoueursUnitTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ascension/JoueursUnitTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ascension/Plateau.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Joueur.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ascension/Joueur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -75,8 +106,8 @@
         <option value="$PROJECT_DIR$/test/JoueursUnitTest.java" />
         <option value="$PROJECT_DIR$/test/PlateauUnitTest.java" />
         <option value="$PROJECT_DIR$/src/Deck.java" />
-        <option value="$PROJECT_DIR$/src/ascension/Deck.java" />
         <option value="$PROJECT_DIR$/test/ascension/DeckUnitTest.java" />
+        <option value="$PROJECT_DIR$/src/ascension/Deck.java" />
       </list>
     </option>
   </component>
@@ -310,8 +341,8 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager" selected="JUnit.DeckUnitTest.testIsListVide">
-    <configuration default="false" name="CardsUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DeckUnitTest">
+    <configuration default="false" name="DeckUnitTest.testPiocherDesCartesPiocherVontDansLaMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ascension.*" />
@@ -322,9 +353,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ascension" />
-      <option name="MAIN_CLASS_NAME" value="ascension.CardsUnitTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ascension.DeckUnitTest" />
+      <option name="METHOD_NAME" value="testPiocherDesCartesPiocherVontDansLaMain" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -337,7 +368,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DeckUnitTest.testIsListVide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="DeckUnitTest.testPiocherUneCartePiocherVaDansLaMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ascension.*" />
@@ -349,8 +380,86 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ascension" />
       <option name="MAIN_CLASS_NAME" value="ascension.DeckUnitTest" />
-      <option name="METHOD_NAME" value="testIsListVide" />
+      <option name="METHOD_NAME" value="testPiocherUneCartePiocherVaDansLaMain" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DeckUnitTest.testPiocherNombreDeCartesEnMoinsDansLeDeck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ascension.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Ascension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ascension" />
+      <option name="MAIN_CLASS_NAME" value="ascension.DeckUnitTest" />
+      <option name="METHOD_NAME" value="testPiocherNombreDeCartesEnMoinsDansLeDeck" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DeckUnitTest.testPiocherDesCartesListVide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ascension.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Ascension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ascension" />
+      <option name="MAIN_CLASS_NAME" value="ascension.DeckUnitTest" />
+      <option name="METHOD_NAME" value="testPiocherDesCartesListVide" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DeckUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ascension.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Ascension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ascension" />
+      <option name="MAIN_CLASS_NAME" value="ascension.DeckUnitTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -769,14 +878,20 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CardsUnitTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testIsListVide" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherDesCartesPiocherVontDansLaMain" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherUneCartePiocherVaDansLaMain" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherNombreDeCartesEnMoinsDansLeDeck" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherDesCartesListVide" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DeckUnitTest" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testIsListVide" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CardsUnitTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DeckUnitTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherDesCartesListVide" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherNombreDeCartesEnMoinsDansLeDeck" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherUneCartePiocherVaDansLaMain" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DeckUnitTest.testPiocherDesCartesPiocherVontDansLaMain" />
       </list>
     </recent_temporary>
   </component>
@@ -796,7 +911,7 @@
       <option name="presentableId" value="Default" />
       <updated>1479829533859</updated>
       <workItem from="1479829535767" duration="134000" />
-      <workItem from="1479990400664" duration="1715000" />
+      <workItem from="1479990400664" duration="3548000" />
     </task>
     <task id="LOCAL-00001" summary="Plateau, joueurs , deck, cards ,pas les output">
       <created>1479990721054</created>
@@ -805,24 +920,22 @@
       <option name="project" value="LOCAL" />
       <updated>1479990721054</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IsListVide()">
+      <created>1479992146336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1479992146336</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CardsUnitTest - 2016.11.24 at 13h 41m 21s.xml">
-      <configuration name="CardsUnitTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CardsUnitTest - 2016.11.24 at 13h 41m 33s.xml">
-      <configuration name="CardsUnitTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CardsUnitTest - 2016.11.24 at 13h 41m 46s.xml">
-      <configuration name="CardsUnitTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CardsUnitTest - 2016.11.24 at 13h 42m 08s.xml">
-      <configuration name="CardsUnitTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CardsUnitTest - 2016.11.24 at 13h 43m 55s.xml">
       <configuration name="CardsUnitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeckUnitTest - 2016.11.24 at 14h 14m 03s.xml">
+      <configuration name="DeckUnitTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DeckUnitTest_testIsListVide - 2016.11.24 at 13h 53m 26s.xml">
       <configuration name="DeckUnitTest.testIsListVide" configurationId="JUnit" />
@@ -830,9 +943,27 @@
     <history-entry file="DeckUnitTest_testIsListVide - 2016.11.24 at 13h 54m 43s.xml">
       <configuration name="DeckUnitTest.testIsListVide" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DeckUnitTest_testPiocherDesCartesListVide - 2016.11.24 at 14h 12m 32s.xml">
+      <configuration name="DeckUnitTest.testPiocherDesCartesListVide" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeckUnitTest_testPiocherDesCartesListVide - 2016.11.24 at 14h 13m 55s.xml">
+      <configuration name="DeckUnitTest.testPiocherDesCartesListVide" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeckUnitTest_testPiocherDesCartesPiocherVontDansLaMain - 2016.11.24 at 14h 00m 52s.xml">
+      <configuration name="DeckUnitTest.testPiocherDesCartesPiocherVontDansLaMain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeckUnitTest_testPiocherDesCartesPiocherVontDansLaMain - 2016.11.24 at 14h 01m 01s.xml">
+      <configuration name="DeckUnitTest.testPiocherDesCartesPiocherVontDansLaMain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeckUnitTest_testPiocherNombreDeCartesEnMoinsDansLeDeck - 2016.11.24 at 14h 01m 28s.xml">
+      <configuration name="DeckUnitTest.testPiocherNombreDeCartesEnMoinsDansLeDeck" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DeckUnitTest_testPiocherUneCartePiocherVaDansLaMain - 2016.11.24 at 14h 01m 15s.xml">
+      <configuration name="DeckUnitTest.testPiocherUneCartePiocherVaDansLaMain" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1849000" />
+    <option name="totallyTimeSpent" value="3682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -864,6 +995,33 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -878,7 +1036,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Plateau, joueurs , deck, cards ,pas les output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plateau, joueurs , deck, cards ,pas les output" />
+    <MESSAGE value="IsListVide()" />
+    <option name="LAST_COMMIT_MESSAGE" value="IsListVide()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -977,19 +1136,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ascension/Plateau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ascension/Joueur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ascension/JoueursUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ascension/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+        <state relative-caret-position="261">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ascension/DeckUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1235">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="329">
+          <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+          <folding>
+            <element signature="e#1893#1900#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

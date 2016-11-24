@@ -13,7 +13,6 @@ public class DeckUnitTest {
     @Test
     public void testPiocherNombreDeCartesEnMoinsDansLeDeck() {
         Deck deck = new Deck();
-        deck.list=new ArrayList<Cards>();
         Cards c1= new Cards("c1");
         Cards c2= new Cards("c2");
         Cards c3= new Cards("c3");
@@ -32,8 +31,7 @@ public class DeckUnitTest {
     @Test
     public void testPiocherUneCartePiocherVaDansLaMain() {
         Deck deck = new Deck();
-        deck.list=new ArrayList<Cards>();
-        deck.hand=new ArrayList<Cards>();
+
         Cards c1= new Cards("c1");
         Cards c2= new Cards("c2");
         Cards c3= new Cards("c3");
@@ -52,8 +50,6 @@ public class DeckUnitTest {
     @Test
     public void testPiocherDesCartesPiocherVontDansLaMain() {
         Deck deck = new Deck();
-        deck.list=new ArrayList<Cards>();
-        deck.hand=new ArrayList<Cards>();
         ArrayList<Cards> testArray= new ArrayList<Cards>();
 
         Cards c1= new Cards("c1");
@@ -75,6 +71,15 @@ public class DeckUnitTest {
 
         deck.piocher(3);
         Assert.assertEquals(testArray,deck.hand);
+
+    }
+    @Test
+    public void testPiocherDesCartesListVide() {
+        Deck deck = new Deck();
+        ArrayList<Cards> testArray= new ArrayList<Cards>();
+        int i=deck.size();
+        deck.piocher(3);
+        Assert.assertTrue(deck.hand.size()==i);
 
     }
 
@@ -163,7 +168,12 @@ public class DeckUnitTest {
         Assert.assertTrue(de.isListVide());
     }
 
-
+    @Test
+    public void testPiocherMain(){
+        Deck deck = new Deck();
+        deck.piocherMain();
+        Assert.assertTrue(5==deck.list.size());
+    }
 
 
 }

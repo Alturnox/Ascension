@@ -22,10 +22,13 @@ public class Deck extends ArrayList {
 
     public void piocher(int nbDeCartePiocher) {
         // pas finis faut copier la carte dans le hand
-        for (int i=0;i<nbDeCartePiocher;i++){
-            hand.add(list.get(0));
-            list.remove(0);
+        if (isListVide()==false){
+            for (int i=0;i<nbDeCartePiocher;i++){
+                hand.add(list.get(0));
+                list.remove(0);
+            }
         }
+
 
     }
 
@@ -45,5 +48,12 @@ public class Deck extends ArrayList {
     public boolean isListVide() {
         if (list.size()==0) return true;
         else return false;
+    }
+
+    public void piocherMain() {
+        for (int i=0;i<5;i++){
+            hand.add(list.get(0));
+            list.remove(0);
+        }
     }
 }
