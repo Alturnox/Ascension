@@ -41,4 +41,9 @@ public class Deck extends ArrayList {
     public int nombreDeCarteDansSonDeck() {
         return list.size();
     }
+
+    public boolean isListVide() {
+        if (list.size()==0) return true;
+        else return false;
+    }
 }

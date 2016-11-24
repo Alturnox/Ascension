@@ -82,6 +82,7 @@ public class DeckUnitTest {
 
 
 
+
     @Test
     public void testMelangerDeck(){
         Deck deck = new Deck();
@@ -142,9 +143,24 @@ public class DeckUnitTest {
         deck.list.add(c4);
 
         Assert.assertTrue(deck.nombreDeCarteDansSonDeck()==deck.list.size());
+    }
 
+    @Test
+    public void testIsListVide(){
+        Deck deck = new Deck();
+        deck.list=new ArrayList<Cards>();
+        Cards c1=new Cards("c1");
+        Cards c2=new Cards("c2");
+        Cards c3=new Cards("c3");
+        Cards c4=new Cards("c4");
+        deck.list.add(c1);
+        deck.list.add(c2);
+        deck.list.add(c3);
+        deck.list.add(c4);
 
-
+        Assert.assertFalse(deck.isListVide());
+        Deck de=new Deck();
+        Assert.assertTrue(de.isListVide());
     }
 
 
