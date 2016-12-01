@@ -404,6 +404,7 @@ public class Plateau {
         deck.add(DruidsOfTheStoneCircle2);
         deck.add(FlytrapWitch1);
         deck.add(FlytrapWitch2);
+        shuffle(deck);
     }
 }
 
