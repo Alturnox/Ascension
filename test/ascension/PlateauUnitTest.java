@@ -59,7 +59,7 @@ public class PlateauUnitTest {
         p.deck.add(c6);
         p.deck.add(c7);
         p.faireLaLigneCentrale();
-        Assert.assertEquals(c7,p.remplacerLaLigneCentrale(4,c7));
+        Assert.assertEquals(c7,p.remplacerLaLigneCentrale(4));
     }
 
 

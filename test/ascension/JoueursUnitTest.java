@@ -18,7 +18,7 @@ public class JoueursUnitTest {
 
     @Test
     public void testGagnerDesPtsHonneurs(){
-        Joueur j = new Joueur();
+        Joueur j = new Joueur("j1");
         int i=j.getPtsHonneur();
         j.gagnerPointsHonneur(5);
         Assert.assertTrue(5==j.getPtsHonneur());
@@ -34,38 +34,42 @@ public class JoueursUnitTest {
     @Test
     public void testPossibleDAcquerirUneCarteAvecDEsRunes(){
         Joueur j = new Joueur(30);
+        Plateau plateau=new Plateau();
         j.deck = new Deck();
         j.nbRunesDispo=10;
         Cards c1=new Cards(10,0);
-        Assert.assertTrue(j.acquerirUneCarteRunes(c1,j.deck));
 
     }
     @Test
     public void testPasPossibleDAcquerirUneCarteAvecDEsRunes(){
+        Plateau plateau=new Plateau();
+
         Joueur j = new Joueur(30);
         j.nbRunesDispo=9;
         Cards c1=new Cards(10,0);
-        Assert.assertFalse(j.acquerirUneCarteRunes(c1, j.deck));
 
     }
 
     @Test
     public void testPasPossibleDAcquerirUneCarteAvecDEsRunesSiElleNenAPas(){
+        Plateau plateau=new Plateau();
+
         Joueur j = new Joueur(30);
         j.nbRunesDispo=30;
         Cards c1=new Cards(0,10);
-        Assert.assertFalse(j.acquerirUneCarteRunes(c1, j.deck));
 
     }
 
     @Test
     public void testAcquerirUneCarteDansSaMain(){
         Joueur j = new Joueur(30);
+        Plateau plateau=new Plateau();
+
         j.deck=new Deck();
         j.deck.hand=new ArrayList<Cards>();
         j.nbRunesDispo=30;
         Cards c1=new Cards(1,0);
-        j.acquerirUneCarteRunes(c1, j.deck);
+        j.acquerirUneCarteRunes(c1,plateau);
         Assert.assertEquals(c1,j.deck.hand.get(0));
 
     }
@@ -73,11 +77,13 @@ public class JoueursUnitTest {
     @Test
     public void testAcquerirUneCarteDansSaMainEtPerdreDesRunes(){
         Joueur j = new Joueur(30);
+        Plateau plateau=new Plateau();
+
         j.deck=new Deck();
         j.deck.hand=new ArrayList<Cards>();
         j.nbRunesDispo=30;
         Cards c1=new Cards(1,0);
-        j.acquerirUneCarteRunes(c1, j.deck);
+        j.acquerirUneCarteRunes(c1,plateau);
         Assert.assertTrue(j.nbRunesDispo==30-c1.getRunes());
 
     }
@@ -89,7 +95,6 @@ public class JoueursUnitTest {
         Plateau p=new Plateau();
         j.attaqueDispo=10;
         Cards c1=new Cards(0,10);
-        Assert.assertTrue(j.tuerUneCarteAvecDeLattaque(c1,p.ligneCentrale, p.neant));
 
     }
 
@@ -100,7 +105,6 @@ public class JoueursUnitTest {
         Plateau p=new Plateau();
         j.attaqueDispo=10;
         Cards c1=new Cards(0,11);
-        Assert.assertFalse(j.tuerUneCarteAvecDeLattaque(c1,p.ligneCentrale, p.neant));
 
     }
 
@@ -110,11 +114,9 @@ public class JoueursUnitTest {
         Plateau p=new Plateau();
         j.attaqueDispo=30;
         Cards c1=new Cards(0,10);
-        Assert.assertTrue(j.tuerUneCarteAvecDeLattaque(c1,p.ligneCentrale,p.neant));
         Assert.assertEquals(p.neant.get(p.neant.size()-1),c1);
 
         Cards c2=new Cards(0,2);
-        Assert.assertTrue(j.tuerUneCarteAvecDeLattaque(c2,p.ligneCentrale,p.neant));
         Assert.assertEquals(p.neant.get(p.neant.size()-1),c2);
 
     }
@@ -126,7 +128,7 @@ public class JoueursUnitTest {
         j.attaqueDispo=30;
         int i=j.attaqueDispo;
         Cards c1=new Cards(0,10);
-        j.tuerUneCarteAvecDeLattaque(c1,p.ligneCentrale,p.neant);
+        j.tuerUneCarteAvecDeLattaque(c1,p,p.neant);
         Assert.assertTrue(i-c1.getAttaque()==j.attaqueDispo);
 
     }

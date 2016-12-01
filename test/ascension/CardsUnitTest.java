@@ -52,8 +52,8 @@ public class CardsUnitTest {
 
     @Test
     public void testGagnerDesRunes(){
-        Cards cards = new Cards("gagnerRune","évents");
-        Joueur joueur= new Joueur();
+        Cards cards = new Cards(5,"évents");
+        Joueur joueur= new Joueur("j1");
         joueur.setRunes(5);
 //        int i=joueur.nbRunesDispo;
 // en gros il faut tester les ruens au début + les runes ajouter = runes total
@@ -62,8 +62,8 @@ public class CardsUnitTest {
 
     @Test
     public void testGagnerDesDegats(){
-        Cards cards = new Cards("gagnerDegats","évents");
-        Joueur joueur= new Joueur();
+        Cards cards = new Cards(7,"évents");
+        Joueur joueur= new Joueur("j1");
         joueur.setDegats(5);
         Assert.assertTrue(joueur.attaqueDispo+5==cards.gagnerDesDegats(joueur,5));
     }

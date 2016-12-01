@@ -96,19 +96,19 @@ public class DeckUnitTest {
         Cards c2=new Cards("c2");
         Cards c3=new Cards("c3");
         Cards c4=new Cards("c4");
-        deck.add(c1);
-        deck.add(c2);
-        deck.add(c3);
-        deck.add(c4);
+        deck.list.add(c1);
+        deck.list.add(c2);
+        deck.list.add(c3);
+        deck.list.add(c4);
 
         Deck deck2 = new Deck();
-        deck2.add(c1);
-        deck2.add(c2);
-        deck2.add(c3);
-        deck2.add(c4);
-        Assert.assertEquals(deck, deck2);
-        deck2.melange();
-        Assert.assertNotEquals(deck, deck2);
+        deck2.list.add(c1);
+        deck2.list.add(c2);
+        deck2.list.add(c3);
+        deck2.list.add(c4);
+        Assert.assertEquals(deck.list, deck2.list);
+        deck2.melange(deck2.list);
+        Assert.assertNotEquals(deck.list, deck2.list);
 
 
     }
@@ -168,12 +168,7 @@ public class DeckUnitTest {
         Assert.assertTrue(de.isListVide());
     }
 
-    @Test
-    public void testPiocherMain(){
-        Deck deck = new Deck();
-        deck.piocherMain();
-        Assert.assertTrue(5==deck.list.size());
-    }
+
 
 
 }
