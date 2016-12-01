@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f15ec2dc-e336-4291-876e-4d9232c75674" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ascension/Modele2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ascension/Partie.java" />
+    <list default="true" id="f15ec2dc-e336-4291-876e-4d9232c75674" name="Default" comment="Un peu de tout et de rien">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ascension/Cards.java" afterPath="$PROJECT_DIR$/src/ascension/Cards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ascension/Deck.java" afterPath="$PROJECT_DIR$/src/ascension/Deck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ascension/Joueur.java" afterPath="$PROJECT_DIR$/src/ascension/Joueur.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ascension/Modele2.java" afterPath="$PROJECT_DIR$/src/ascension/Modele2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ascension/Plateau.java" afterPath="$PROJECT_DIR$/src/ascension/Plateau.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ascension/CardsUnitTest.java" afterPath="$PROJECT_DIR$/test/ascension/CardsUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ascension/DeckUnitTest.java" afterPath="$PROJECT_DIR$/test/ascension/DeckUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ascension/JoueursUnitTest.java" afterPath="$PROJECT_DIR$/test/ascension/JoueursUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ascension/PlateauUnitTest.java" afterPath="$PROJECT_DIR$/test/ascension/PlateauUnitTest.java" />
     </list>
     <ignored path="Ascension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +18,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Ascension$Partie.coverage" NAME="Partie Coverage Results" MODIFIED="1480585356559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Ascension$Partie.coverage" NAME="Partie Coverage Results" MODIFIED="1480588004041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ascension.*</FILTER>
     </SUITE>
   </component>
@@ -59,8 +51,8 @@
       <file leaf-file-name="Modele2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ascension/Modele2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +63,18 @@
       <file leaf-file-name="ControlGroup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ascension/ControlGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="195">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Partie.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ascension/Partie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,8 +95,8 @@
       <file leaf-file-name="Vue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ascension/Vue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+            <state relative-caret-position="314">
+              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,8 +107,8 @@
       <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ascension/Plateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="1071">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,7 +168,6 @@
         <option value="$PROJECT_DIR$/test/ascension/PlateauUnitTest.java" />
         <option value="$PROJECT_DIR$/test/ascension/JoueursUnitTest.java" />
         <option value="$PROJECT_DIR$/test/ascension/CardsUnitTest.java" />
-        <option value="$PROJECT_DIR$/src/ascension/Plateau.java" />
         <option value="$PROJECT_DIR$/src/ascension/Joueur.java" />
         <option value="$PROJECT_DIR$/src/ascension/Deck.java" />
         <option value="$PROJECT_DIR$/src/ascension/Cards.java" />
@@ -179,6 +180,7 @@
         <option value="$PROJECT_DIR$/src/ascension/ControlButton.java" />
         <option value="$PROJECT_DIR$/src/ascension/ControlGroup.java" />
         <option value="$PROJECT_DIR$/src/ascension/Modele2.java" />
+        <option value="$PROJECT_DIR$/src/ascension/Plateau.java" />
         <option value="$PROJECT_DIR$/src/ascension/Vue.java" />
       </list>
     </option>
@@ -875,7 +877,7 @@
       <workItem from="1480497641391" duration="4552000" />
       <workItem from="1480509605559" duration="4472000" />
       <workItem from="1480583877946" duration="175000" />
-      <workItem from="1480584481607" duration="1834000" />
+      <workItem from="1480584481607" duration="2517000" />
     </task>
     <task id="LOCAL-00001" summary="Plateau, joueurs , deck, cards ,pas les output">
       <created>1479990721054</created>
@@ -898,7 +900,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479993978322</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Un peu de tout et de rien">
+      <created>1480587411254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480587411254</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -934,7 +943,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49727000" />
+    <option name="totallyTimeSpent" value="50410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -956,7 +965,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.022222223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2991453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1019,7 +1028,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Plateau, joueurs , deck, cards ,pas les output" />
     <MESSAGE value="IsListVide()" />
-    <option name="LAST_COMMIT_MESSAGE" value="IsListVide()" />
+    <MESSAGE value="Un peu de tout et de rien" />
+    <option name="LAST_COMMIT_MESSAGE" value="Un peu de tout et de rien" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1327,14 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ascension/Partie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ascension/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1343,10 +1345,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ascension/ControlGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ascension/Modele2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ascension/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="1071">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1361,28 +1381,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ascension/ControlGroup.java">
+    <entry file="file://$PROJECT_DIR$/src/ascension/Partie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="127">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ascension/Modele2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ascension/Vue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state relative-caret-position="314">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -22,11 +22,13 @@ public class Plateau {
     public int finDePartie;
     public int intGagnant;
     public int indexGagnant;
+    public String ligneCentralePrint;
 
 
 
 
     public Plateau(){
+        ligneCentralePrint="Ligne centrale : ";
         ligneCentrale=new Cards[6];
         deck=new ArrayList<Cards>();
         creerDeckDuPlateau();
@@ -75,10 +77,11 @@ public class Plateau {
         return ligneCentrale[index];
     }
 
-    public  void afficherLaLigneCentrale(){
+    public  String afficherLaLigneCentrale(){
         for (int i=0; i<ligneCentrale.length;i++){
             ligneCentrale[i].print();
         }
+        return ligneCentralePrint;
     }
 
     public void remplirLeDeck(){

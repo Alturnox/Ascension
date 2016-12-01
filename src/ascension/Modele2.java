@@ -8,11 +8,11 @@ import java.awt.*;
  */
 public class Modele2 extends JPanel {
     Plateau p;
-    Joueur j;
+    Joueur joueur;
 
     public Modele2(){
-        Plateau p=new Plateau();
-        Joueur joueur=new Joueur("j1");
+        p=new Plateau();
+        joueur=new Joueur("j1");
         p.listeDeJoueurs.add(joueur);
         setLayout(null);
 
