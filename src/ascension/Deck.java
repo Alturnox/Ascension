@@ -37,6 +37,7 @@ public class Deck extends ArrayList {
             }
             remplirDeck();
             for (int j=0; j<nbDeCarteRestanteAPiocher ; j++) {
+
                 hand.add(list.get(0));
                 list.remove(0);
             }
@@ -81,14 +82,28 @@ public class Deck extends ArrayList {
     }
 
     public void initialiserDeck(){
-        for (int i=0;i<8;i++){
-            Cards c=new Cards("Apprentis",7,"Héros",1,0,"",0);
-            list.add(c);
-        }
-        for (int j=0;j<2;j++){
-            Cards c=new Cards("Milices",3,"Héros",0,1,"",0);
-            list.add(c);
-        }
+            Cards apprentis1=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis2=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis3=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis4=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis5=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis6=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis7=new Cards("Apprentis",7,"Héros",1,0,"",0);
+            Cards apprentis8=new Cards("Apprentis",7,"Héros",1,0,"",0);
+
+            list.add(apprentis1);
+            list.add(apprentis2);
+            list.add(apprentis3);
+            list.add(apprentis4);
+            list.add(apprentis5);
+            list.add(apprentis6);
+            list.add(apprentis7);
+            list.add(apprentis8);
+            Cards milice1=new Cards("Milices",3,"Héros",0,1,"",0);
+            Cards milice2=new Cards("Milices",3,"Héros",0,1,"",0);
+            list.add(milice1);
+            list.add(milice2);
+
         shuffle(list);
     }
 

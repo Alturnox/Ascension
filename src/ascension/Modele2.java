@@ -14,11 +14,9 @@ public class Modele2 extends JPanel {
         p=new Plateau();
         joueur=new Joueur("j1");
         p.listeDeJoueurs.add(joueur);
+        p.quiCommence(p.listeDeJoueurs);
+        joueur.deck.piocherMain();
         setLayout(null);
 
-        JPanel panel = new JPanel();
-        panel.setBounds(36, 111, 497, 86);
-        add(panel);
-        panel.setLayout(new GridLayout(1, 0, 0, 0));
     }
 }

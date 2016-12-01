@@ -18,7 +18,7 @@ public class Plateau {
     public ArrayList<Cards> deck;
     public ArrayList<Joueur> listeDeJoueurs;
     public int nombreDePtsDHonneur;
-    public Cards[] tableauHabitants;
+    public Cards[] tableauHabitantsR;
     public int finDePartie;
     public int intGagnant;
     public int indexGagnant;
@@ -30,8 +30,11 @@ public class Plateau {
     public Plateau(){
         ligneCentralePrint="Ligne centrale : ";
         ligneCentrale=new Cards[6];
+        tableauHabitantsR=new Cards[3];
+        creerLesHabitants();
         deck=new ArrayList<Cards>();
         creerDeckDuPlateau();
+        faireLaLigneCentrale();
         neant=new ArrayList<Cards>();
         listeDeJoueurs= new ArrayList<Joueur>();
         finDePartie=14;
@@ -127,11 +130,9 @@ public class Plateau {
     }
 
     public  void creerLesHabitants(){
-        Cards tableauHabitantsR[]=new Cards[4];
         tableauHabitantsR[0]=new Cards("Mystique",8,"Héros",3,0,"",1);
         tableauHabitantsR[1]=new Cards("Infanteries lourdes",4,"Héros",2,0,"",1);
         tableauHabitantsR[2]=new Cards("Fanatiques",15,"Monstre",0,3,"",1);
-        tableauHabitantsR[3]=new Cards("Cultiste",15,"Monstre",0,2,"",1);
 
 
     }
