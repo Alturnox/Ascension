@@ -77,6 +77,7 @@ public class Cards {
 
     public int gagnerDesRunes(Joueur j, int runes) {
         j.nbRunesDispo= j.nbRunesDispo+runes;
+
         return j.nbRunesDispo;
     }
 
@@ -348,9 +349,12 @@ public class Cards {
     public void plusDeDeuxConstructeur(Joueur joueurQuiJoueLaCarte) {
         //pas finis
         int i=0;
-        for (Cards c : joueurQuiJoueLaCarte.deck.construc){
+        for (Cards c : joueurQuiJoueLaCarte.getConstruct()){
             if (c.type.equals("Constructeur Mechana")){
                 i++;
+            }
+            if (i>=2){
+                // a finir
             }
 
         }

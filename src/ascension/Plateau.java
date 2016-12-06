@@ -87,6 +87,14 @@ public class Plateau {
         return ligneCentralePrint;
     }
 
+    public void afficherLeNeant() {
+        for (Cards c : neant){
+            c.print();
+
+        }
+
+    }
+
     public void remplirLeDeck(){
         if (deck.size()==0){
             for( Cards c : neant){
@@ -139,18 +147,18 @@ public class Plateau {
 ////////////////////////  pb avec ça  //////////////////////////////////////////////////////////////////////////////////////////////////////
     public void debutTourDeJeu(Joueur j){
         for (Cards c : j.deck.hand){
-            j.deck.defausse.add(c);
+            j.getDefausse().add(c);
 
         }
-        j.deck.hand.clear();
-        j.deck.piocherMain();
+        j.getHand().clear();
+        j.piocherMain();
     }
 
     public boolean tourDeJeu(Joueur j){
         j.estEntraindeJouer=true;
         while (j.estEntraindeJouer!=false){
             // Completer dedans
-            j.deck.afficherLesCartesDansSaMain();
+            j.afficherLesCartesDansSaMain();
 
         }
 
@@ -407,6 +415,8 @@ public class Plateau {
         deck.add(FlytrapWitch2);
         shuffle(deck);
     }
+
+
 }
 
 

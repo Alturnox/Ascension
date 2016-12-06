@@ -34,23 +34,31 @@ public class Joueur {
         this.degats = degats;
     }
 
-    public int getPtsHonneur() {
-        return ptsHonneur;
-    }
-
-    public void gagnerPointsHonneur(int pts) {
-        this.ptsHonneur=ptsHonneur+pts;
-    }
-
     public int setPtsHonneurs(int ptsHonneurs) {
         this.ptsHonneur = ptsHonneurs;
         return this.ptsHonneur;
     }
 
+    public int getPtsHonneur() {
+        return ptsHonneur;
+    }
+
+    public ArrayList<Cards> getHand(){return deck.getHand();}
+    public ArrayList<Cards> getTapis() { return  deck.getTapis();}
+    public ArrayList<Cards> getList() { return  deck.getList();}
+    public ArrayList<Cards> getDefausse() { return  deck.getDefausse();}
+    public ArrayList<Cards> getConstruct() { return  deck.getConstruc();}
+
+    public void gagnerPointsHonneur(int pts) {
+        this.ptsHonneur=ptsHonneur+pts;
+    }
+
+
+
     public void acquerirUneCarteRunes(Cards c1,Plateau plat) {
         if (c1.getRunes()>0){
             if (nbRunesDispo>=c1.getRunes()){
-                this.deck.defausse.add(c1);
+                getDefausse().add(c1);
                 nbRunesDispo-=c1.getRunes();
                 plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
             }
@@ -75,18 +83,24 @@ public class Joueur {
 
 
     public void jouerUneCarte(Cards cards, Plateau plateau){
-        deck.tapis.add(cards);
-        deck.hand.remove(cards);
+        getTapis().add(cards);
         cards.effetDeCarte(cards.getEffet(),this, plateau);
 
     }
 
+    public void piocherMain(){
+        deck.piocherMain();
+    }
+
+
+
+
     public void finDuTour(){
-        if (deck.tapis.size()>0){
-            for (Cards carteF : deck.tapis) {
-                deck.defausse.add(carteF);
+        if (getTapis().size()>0){
+            for (Cards carteF : getTapis()) {
+                getDefausse().add(carteF);
         }
-            deck.defausse.clear();
+            getDefausse().clear();
         }
         attaqueDispo=0;
         nbRunesDispo=0;
@@ -100,21 +114,28 @@ public class Joueur {
 
     public int calculerPtsHonneurFinaux() {
         //////////////// vider la défausse et pour chaque carte ajouter pts honneur au pts honneur/////////:
-        if (deck.defausse.size()!=0) {
-            for (Cards cA : deck.defausse){
-                deck.list.add(cA);
+        if (getDefausse().size()!=0) {
+            for (Cards cA : getDefausse()){
+                getList().add(cA);
             }
         }
-        if (deck.hand.size()!=0){
-            for (Cards cA : deck.hand){
-                deck.list.add(cA);
+        if (getHand().size()!=0){
+            for (Cards cA : getHand()){
+                getList().add(cA);
             }
         }
-        for (Cards cards : deck.list){
+        for (Cards cards : getList()){
             ptsHonneur+=cards.getRecompense();
         }
         return  ptsHonneur;
     }
 
 
+    public void afficherLesCartesDansSaMain() {
+        deck.afficherLesCartesDansSaMain();
+    }
+
+    public Cards getCarteJouer(int indexDelaCarte) {
+        return getHand().get(indexDelaCarte);
+    }
 }

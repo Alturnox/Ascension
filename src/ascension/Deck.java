@@ -25,7 +25,18 @@ public class Deck extends ArrayList {
         this.hand=new ArrayList<Cards>();
         this.defausse=new ArrayList<Cards>();
         this.tapis=new ArrayList<Cards>();
+        this.construc=new ArrayList<Cards>();
     }
+
+
+    public ArrayList<Cards> getHand() {return hand;}
+    public ArrayList<Cards> getTapis() {return tapis;}
+    public ArrayList<Cards> getDefausse() {return defausse;}
+    public ArrayList<Cards> getList() {return list;}
+    public ArrayList<Cards> getConstruc() {return construc;}
+
+
+
 
     public void piocher(int nbDeCartePiocher) {
        remplirDeck();
@@ -112,4 +123,7 @@ public class Deck extends ArrayList {
             c.print();
         }
     }
+
+
+
 }
