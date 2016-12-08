@@ -3,20 +3,19 @@ package ascension;
 /**
  * Created by Nathan on 01/12/2016.
  */
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  * Created by user on 20/05/2016.
  */
 public class ControlButton implements ActionListener {
-    public Modele2 m;
+    public Modele m;
     public Vue fen;
     public int indexDelaCarte;
+    public int intRetourToucherUneCarte;
 
 
-    public ControlButton(Vue fen, Modele2 m) {
+    public ControlButton(Vue fen, Modele m) {
         this.m = m;
         this.fen = fen;
 
@@ -35,18 +34,32 @@ public class ControlButton implements ActionListener {
         }
 
         for (ButtonV2 bv2 : fen.listeDeBoutons) {
-
             if (e.getSource() == bv2) {
-                System.out.print(bv2.getIdBouton());
-//            // joue la carte du joueur
 //            // Idea : recup l'index, puis le nom de la carte , retourner la le nom de la carte direct pour
-              indexDelaCarte=fen.retourneLenomCarte(bv2);
-               m.joueurJoueUneCarte(m.joueur,m.trouverLaBonneCarte(indexDelaCarte),m.p);
+              indexDelaCarte=fen.retourneIndexDeLaCarte(bv2);
+               m.joueurJoueUneCarte(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
                 fen.carteJouer(bv2);
+                fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
+                bv2.removeActionListener(this);
+            }
+        }
+
+        for (ButtonV2 bv22 : fen.tableauBtnCentrale) {
+            // problememe a resoudre : si la carte n'est pas "achetable" les boutons changet de place
+            if (e.getSource() == bv22) {
+                // Faut differencier si on veut tuer ou acquerir la carte
+                int intRetourner=m.toucherAUneCarteCentraleM(m.trouverLaBonneCarteCentrale(bv22.getIdBouton()),m.p,m.joueurActuel());
+                if (intRetourner>0){
+                    String nomStocke = m.p.ligneCentrale[bv22.getIdBouton()].getNom();
+                    // fonction tuerUneCartecentrale
+                    fen.actualiserLigneCentrale(bv22,nomStocke);
+                    fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
+
+
+                }
+
 
             }
-
-
         }
     }
 }

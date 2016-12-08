@@ -32,11 +32,17 @@ public class Vue extends JFrame {
     public JButton btnPasser;
     public JButton btnDefausse;
     public ArrayList<ButtonV2> listeDeBoutons;
+    public ButtonV2[] tableauBtnCentrale;
     public JPanel pane;
+    public JLabel jlabelRunesEtAttaqueDispo;
+    public ButtonV2 btnCarteCentrale;
+    public ControlButton cb;
+    public Modele m;
+    public JPanel panelLigneCentrale;
 
 
-    public Vue(Modele2 m){
-
+    public Vue(Modele m){
+        this.m=m;
         init(m);
         creerWidget(m);
         setSize(1200, 650);
@@ -47,8 +53,8 @@ public class Vue extends JFrame {
 
     }
 
-    public void init(Modele2 m){
-        ControlButton cb=new ControlButton(this,m);
+    public void init(Modele m){
+        cb=new ControlButton(this,m);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 653, 480);
 
@@ -77,28 +83,23 @@ public class Vue extends JFrame {
         JButton btnHabitant_2 = new JButton(m.p.tableauHabitantsR[2].getNom());
         habitants.add(btnHabitant_2);
 
-        JPanel panelLigneCentrale = new JPanel();
+        panelLigneCentrale = new JPanel();
         panelLigneCentrale.setBounds(40, 137, 1150, 74);
         contentPane.add(panelLigneCentrale);
         panelLigneCentrale.setLayout(new GridLayout(1, 0, 0, 0));
 
-        JButton btnCarteCentrale = new JButton(m.p.ligneCentrale[0].getNom());
-        panelLigneCentrale.add(btnCarteCentrale);
 
-        JButton btnCartecentral = new JButton(m.p.ligneCentrale[1].getNom());
-        panelLigneCentrale.add(btnCartecentral);
+        tableauBtnCentrale =new ButtonV2[5];
+        for (int i=0; i<5; i++){
+            btnCarteCentrale = new ButtonV2(m.p.ligneCentrale[i].getNom(),i);
+            btnCarteCentrale.addActionListener(cb);
+            tableauBtnCentrale[i]=btnCarteCentrale;
+            panelLigneCentrale.add(btnCarteCentrale);
+        }
 
-        JButton btnCartecentrale = new JButton(m.p.ligneCentrale[2].getNom());
-        panelLigneCentrale.add(btnCartecentrale);
+        contentPane.add(panelLigneCentrale);
 
-        JButton btnCartecentrale_1 = new JButton(m.p.ligneCentrale[3].getNom());
-        panelLigneCentrale.add(btnCartecentrale_1);
 
-        JButton btnCartecentrale_2 = new JButton(m.p.ligneCentrale[4].getNom());
-        panelLigneCentrale.add(btnCartecentrale_2);
-
-        JButton btnCartecentrale_3 = new JButton(m.p.ligneCentrale[5].getNom());
-        panelLigneCentrale.add(btnCartecentrale_3);
 
         btnNeant = new JButton("Neant");
         btnNeant.addActionListener(cb);
@@ -150,10 +151,9 @@ public class Vue extends JFrame {
 
 
         JLabel jb= new JLabel("Tour du joueur : " + m.joueurActuel().nomJoueur);
-        JLabel jlabelRunesEtAttaqueDispo= new JLabel("Runes :  " + m.joueurActuel().nbRunesDispo + "  Attaque : " + m.joueurActuel().attaqueDispo);
-
-
         jb.setBounds(258, 11, 200, 20);
+
+        jlabelRunesEtAttaqueDispo= new JLabel("Runes :  " + m.joueurActuel().nbRunesDispo + "  Attaque : " + m.joueurActuel().attaqueDispo);
         jlabelRunesEtAttaqueDispo.setBounds(1200,460,500,52);
 //        jb.setColumns(10);
         contentPane.add(jlabelRunesEtAttaqueDispo);
@@ -174,17 +174,18 @@ public class Vue extends JFrame {
     }
 
 
-    public void creerWidget(Modele2 m){
+    public void creerWidget(Modele m){
         setContentPane(contentPane);
     }
 
 
 
 
-    public int retourneLenomCarte(JButton carteMainJoueur) {
+    public int retourneIndexDeLaCarte(ButtonV2 carteMainJoueur) {
         return listeDeBoutons.indexOf(carteMainJoueur);
 
     }
+
 
     public void carteJouer(ButtonV2 buttonV2) {
         panel_3.add(buttonV2);
@@ -195,4 +196,29 @@ public class Vue extends JFrame {
         repaint();
 
     }
+
+    public void actualiserRunesEtAttaqueJoueur(Joueur joueur,Modele m) {
+        contentPane.remove(jlabelRunesEtAttaqueDispo);
+        jlabelRunesEtAttaqueDispo= new JLabel("Runes :  " + joueur.getRunes() + "  Attaque : " + joueur.attaqueDispo);
+        jlabelRunesEtAttaqueDispo.setBounds(1200,460,500,52);
+        contentPane.add(jlabelRunesEtAttaqueDispo);
+
+        invalidate();
+        validate();
+        repaint();
+    }
+
+
+    public void actualiserLigneCentrale(ButtonV2 bv22, String nomStocke) {
+        int idDeStockage=bv22.getIdBouton();
+        panelLigneCentrale.remove(tableauBtnCentrale[bv22.getIdBouton()]);
+
+        tableauBtnCentrale[bv22.getIdBouton()]=new ButtonV2(nomStocke,idDeStockage);
+        panelLigneCentrale.add(tableauBtnCentrale[idDeStockage]);
+        invalidate();
+        validate();
+        repaint();
+    }
+
+
 }

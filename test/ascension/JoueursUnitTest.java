@@ -1,8 +1,5 @@
 package ascension;
 
-import ascension.Deck;
-import ascension.Joueur;
-import ascension.Plateau;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -128,7 +125,7 @@ public class JoueursUnitTest {
         j.attaqueDispo=30;
         int i=j.attaqueDispo;
         Cards c1=new Cards(0,10);
-        j.tuerUneCarteAvecDeLattaque(c1,p,p.neant);
+        j.tuerUneCarteAvecDeLattaque(c1,p);
         Assert.assertTrue(i-c1.getAttaque()==j.attaqueDispo);
 
     }

@@ -76,15 +76,15 @@ public class Cards {
 
 
     public int gagnerDesRunes(Joueur j, int runes) {
+        System.out.println( "joueur " + j.nomJoueur +"runes  "+j.nbRunesDispo +" " );
         j.nbRunesDispo= j.nbRunesDispo+runes;
+        System.out.println( "runes  " +j.nbRunesDispo + " +");
+
 
         return j.nbRunesDispo;
     }
 
-    public int gagnerDesDegats(Joueur joueur, int degats) {
-        joueur.attaqueDispo=joueur.attaqueDispo+degats;
-        return  joueur.attaqueDispo;
-    }
+    public int gagnerDesDegats(Joueur joueur, int degats) {return joueur.gagnerDegats(degats);}
 
     public boolean estDetype(String type) {
         for (int i = 0; i< tabtype.length; i++){
@@ -119,27 +119,28 @@ public class Cards {
         }
         switch (idEffet) {
             case 3:
-                gagnerDesDegats(joueurQuiJoueLaCarte,1);
+                joueurQuiJoueLaCarte.gagnerDegats(1);
                 break;
         }
         switch (idEffet) {
             case 4:
-                gagnerDesDegats(joueurQuiJoueLaCarte,2);
+                joueurQuiJoueLaCarte.gagnerDegats(2);
                 break;
         }
         switch (idEffet) {
             case 5:
-                gagnerDesDegats(joueurQuiJoueLaCarte,3);
+                joueurQuiJoueLaCarte.gagnerDegats(3);
+
                 break;
         }
         switch (idEffet) {
             case 6:
-                gagnerDesDegats(joueurQuiJoueLaCarte,4);
+                joueurQuiJoueLaCarte.gagnerDegats(4);
                 break;
         }
         switch (idEffet) {
             case 7:
-                gagnerDesRunes(joueurQuiJoueLaCarte,1);
+                joueurQuiJoueLaCarte.gagnerRunes(1);
                 break;
         }
         switch (idEffet) {

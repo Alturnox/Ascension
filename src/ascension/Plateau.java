@@ -40,10 +40,13 @@ public class Plateau {
         finDePartie=14;
     }
 
+    public ArrayList<Cards> getNeant() {return neant;}
+
+    public Cards getCartecentrale(int indexDelaCarte) { return ligneCentrale[indexDelaCarte];   }
+
+
     public void ajouterUnJoueurJ(Joueur j){
-        if (verifNombreDeJoueurs()){
-            listeDeJoueurs.add(j);
-        }
+        if (verifNombreDeJoueurs()){listeDeJoueurs.add(j);}
     }
 
     public boolean verifNombreDeJoueurs(){

@@ -8,7 +8,7 @@ public class Partie {
 
         javax.swing.SwingUtilities.invokeLater( new Runnable() {
             public void run() {
-                Modele2 m = new Modele2();
+                Modele m = new Modele();
                 ControlGroup controler=new ControlGroup(m);
             }
         });

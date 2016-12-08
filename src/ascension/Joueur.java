@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 public class Joueur {
     public int nbRunesDispo;
-    private int degats;
-    private int ptsHonneur;
+    public int degats;
+    public int ptsHonneur;
     public int attaqueDispo;
     public String nomJoueur;
     Deck deck;
@@ -23,6 +23,9 @@ public class Joueur {
         deck = new Deck();
         deck.initialiserDeck();
         estEntraindeJouer=false;
+        setDegats(0);
+        setRunes(0);
+        setPtsHonneurs(0);
     }
 
     public int setRunes(int nbRunesDispo) {
@@ -43,6 +46,12 @@ public class Joueur {
         return ptsHonneur;
     }
 
+    public Cards getCarteJouer(int indexDelaCarte) {
+        return getHand().get(indexDelaCarte);
+    }
+
+    public int getRunes() {return nbRunesDispo;}
+
     public ArrayList<Cards> getHand(){return deck.getHand();}
     public ArrayList<Cards> getTapis() { return  deck.getTapis();}
     public ArrayList<Cards> getList() { return  deck.getList();}
@@ -50,35 +59,56 @@ public class Joueur {
     public ArrayList<Cards> getConstruct() { return  deck.getConstruc();}
 
     public void gagnerPointsHonneur(int pts) {
-        this.ptsHonneur=ptsHonneur+pts;
+        ptsHonneur+=pts;
+    }
+
+    public int gagnerDegats(int degats) {
+        attaqueDispo+=degats;
+        return attaqueDispo;
+    }
+
+    public int gagnerRunes(int runes) {
+        nbRunesDispo+=runes;
+        return nbRunesDispo;
     }
 
 
+    public int toucherAUneCarteCentrale(Cards c, Plateau plateau){
+        if (c.getRunes()==0){
+            return tuerUneCarteAvecDeLattaque(c,plateau);
 
-    public void acquerirUneCarteRunes(Cards c1,Plateau plat) {
-        if (c1.getRunes()>0){
-            if (nbRunesDispo>=c1.getRunes()){
-                getDefausse().add(c1);
-                nbRunesDispo-=c1.getRunes();
-                plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
-            }
+        }else if (c.getAttaque()==0){
+            return acquerirUneCarteRunes(c,plateau);
+        }else {
+            return -1;
         }
+
+    }
+    public int acquerirUneCarteRunes(Cards c1,Plateau plat) {
+        if (c1.getRunes()>0 && nbRunesDispo>=c1.getRunes()){
+            getDefausse().add(c1);
+            nbRunesDispo-=c1.getRunes();
+            plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
+            return 2;
+
+        }
+        else return -1;
     }
 
-    public void tuerUneCarteAvecDeLattaque(Cards c1, Plateau plat, ArrayList<Cards> neant) {
+    public int tuerUneCarteAvecDeLattaque(Cards c1, Plateau plat) {
         if (attaqueDispo>=c1.getAttaque() && c1.getAttaque()!=0){
             attaqueDispo-=c1.getAttaque();
             gagnerPointsHonneur(c1.getRecompense());
-            neant.add(c1);
+            plat.getNeant().add(c1);
             plat.remplirLigneCentrale();
+            return 1;
 
         }
+        else return -1;
     }
 
-    public void tuerUneCarteAvecDeLattaqueGratuitement(Plateau plateau) {
-
-
-
+    public void tuerUneCarteAvecDeLattaqueGratuitement(Plateau plateau){
+        // a faire
     }
 
 
@@ -135,7 +165,6 @@ public class Joueur {
         deck.afficherLesCartesDansSaMain();
     }
 
-    public Cards getCarteJouer(int indexDelaCarte) {
-        return getHand().get(indexDelaCarte);
-    }
+
+
 }
