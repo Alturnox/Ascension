@@ -64,7 +64,7 @@ public class CardsUnitTest {
     public void testGagnerDesDegats(){
         Cards cards = new Cards(7,"évents");
         Joueur joueur= new Joueur("j1");
-        joueur.setDegats(5);
+        joueur.setAttaque(5);
         Assert.assertTrue(joueur.attaqueDispo+5==cards.gagnerDesDegats(joueur,5));
     }
 

@@ -50,16 +50,18 @@ public class ControlButton implements ActionListener {
                 // Faut differencier si on veut tuer ou acquerir la carte
                 int intRetourner=m.toucherAUneCarteCentraleM(m.trouverLaBonneCarteCentrale(bv22.getIdBouton()),m.p,m.joueurActuel());
                 if (intRetourner>0){
-                    String nomStocke = m.p.ligneCentrale[bv22.getIdBouton()].getNom();
+                    String nomStocke = m.p.ligneCentrale[bv22.getIdBouton()].getNom() +" r"+m.p.ligneCentrale[bv22.getIdBouton()].getRunes()+ " d"+m.p.ligneCentrale[bv22.getIdBouton()].getAttaque();
                     // fonction tuerUneCartecentrale
                     fen.actualiserLigneCentrale(bv22,nomStocke);
                     fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
-
-
+                    fen.actualiserPtsHonneur(m.joueurActuel(),m);
                 }
-
-
             }
         }
+
+//        if(e.getSource()==fen.btnPasser){
+//            m.finDuTour();
+//            fen.clearTapis();
+//        }
     }
 }

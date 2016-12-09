@@ -34,4 +34,8 @@ public class Modele extends JPanel {
 
 
     public int toucherAUneCarteCentraleM(Cards cards, Plateau p, Joueur joueur) { return joueur.toucherAUneCarteCentrale(cards,p);}
+
+    public void finDuTour() {
+        joueurActuel().finDuTour();
+    }
 }

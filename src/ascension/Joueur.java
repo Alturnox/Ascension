@@ -23,8 +23,8 @@ public class Joueur {
         deck = new Deck();
         deck.initialiserDeck();
         estEntraindeJouer=false;
-        setDegats(0);
-        setRunes(0);
+        setAttaque(10000);
+        setRunes(10000);
         setPtsHonneurs(0);
     }
 
@@ -33,8 +33,9 @@ public class Joueur {
         return this.nbRunesDispo;
     }
 
-    public void setDegats(int degats) {
-        this.degats = degats;
+    public int setAttaque(int attaqueDispo) {
+        this.attaqueDispo = attaqueDispo;
+        return this.attaqueDispo;
     }
 
     public int setPtsHonneurs(int ptsHonneurs) {
@@ -87,6 +88,14 @@ public class Joueur {
     public int acquerirUneCarteRunes(Cards c1,Plateau plat) {
         if (c1.getRunes()>0 && nbRunesDispo>=c1.getRunes()){
             getDefausse().add(c1);
+            if (plat.deck.size()>0){
+                plat.deck.remove(c1);
+
+            }else
+            {
+                plat.remplirLeDeck();
+                acquerirUneCarteRunes(c1,plat);
+            }
             nbRunesDispo-=c1.getRunes();
             plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
             return 2;
@@ -100,7 +109,16 @@ public class Joueur {
             attaqueDispo-=c1.getAttaque();
             gagnerPointsHonneur(c1.getRecompense());
             plat.getNeant().add(c1);
-            plat.remplirLigneCentrale();
+            if (plat.deck.size()>0){
+                plat.deck.remove(c1);
+
+            }
+            else
+            {
+                plat.remplirLeDeck();
+                tuerUneCarteAvecDeLattaque(c1,plat);
+            }
+            plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
             return 1;
 
         }

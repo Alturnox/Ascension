@@ -39,6 +39,7 @@ public class Vue extends JFrame {
     public ControlButton cb;
     public Modele m;
     public JPanel panelLigneCentrale;
+    public JLabel jlabelPtsHonneur;
 
 
     public Vue(Modele m){
@@ -91,7 +92,7 @@ public class Vue extends JFrame {
 
         tableauBtnCentrale =new ButtonV2[5];
         for (int i=0; i<5; i++){
-            btnCarteCentrale = new ButtonV2(m.p.ligneCentrale[i].getNom(),i);
+            btnCarteCentrale = new ButtonV2(m.p.ligneCentrale[i].getNom() +" r"+m.p.ligneCentrale[i].getRunes()+ " d"+m.p.ligneCentrale[i].getAttaque(),i);
             btnCarteCentrale.addActionListener(cb);
             tableauBtnCentrale[i]=btnCarteCentrale;
             panelLigneCentrale.add(btnCarteCentrale);
@@ -152,6 +153,11 @@ public class Vue extends JFrame {
 
         JLabel jb= new JLabel("Tour du joueur : " + m.joueurActuel().nomJoueur);
         jb.setBounds(258, 11, 200, 20);
+
+        jlabelPtsHonneur= new JLabel("Points d'Honneur : " + m.joueurActuel().getPtsHonneur());
+        jlabelPtsHonneur.setBounds(1200, 490, 200, 52);
+
+        contentPane.add(jlabelPtsHonneur);
 
         jlabelRunesEtAttaqueDispo= new JLabel("Runes :  " + m.joueurActuel().nbRunesDispo + "  Attaque : " + m.joueurActuel().attaqueDispo);
         jlabelRunesEtAttaqueDispo.setBounds(1200,460,500,52);
@@ -214,6 +220,7 @@ public class Vue extends JFrame {
         panelLigneCentrale.remove(tableauBtnCentrale[bv22.getIdBouton()]);
 
         tableauBtnCentrale[bv22.getIdBouton()]=new ButtonV2(nomStocke,idDeStockage);
+        tableauBtnCentrale[bv22.getIdBouton()].addActionListener(cb);
         panelLigneCentrale.add(tableauBtnCentrale[idDeStockage]);
         invalidate();
         validate();
@@ -221,4 +228,16 @@ public class Vue extends JFrame {
     }
 
 
+    public void actualiserPtsHonneur(Joueur joueur, Modele m) {
+//        contentPane.remove(jlabelPtsHonneur);
+//        jlabelPtsHonneur= new JLabel("Points d'Honneur : " + m.joueurActuel().getPtsHonneur());
+//        jlabelPtsHonneur.setBounds(1200,460,500,52);
+//        contentPane.add(jlabelPtsHonneur);
+
+        jlabelPtsHonneur.setText("Points d'Honneur : " + m.joueurActuel().getPtsHonneur());
+
+        invalidate();
+        validate();
+        repaint();
+    }
 }

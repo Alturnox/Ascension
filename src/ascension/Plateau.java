@@ -23,8 +23,7 @@ public class Plateau {
     public int intGagnant;
     public int indexGagnant;
     public String ligneCentralePrint;
-
-
+    public int retour;
 
 
     public Plateau(){
@@ -78,9 +77,12 @@ public class Plateau {
     }
 
     public Cards remplacerLaLigneCentrale(int index) {
-        ligneCentrale[index]=deck.get(0);
-        deck.remove(0);
-        return ligneCentrale[index];
+        if (deck.size()>0){
+            ligneCentrale[index]=deck.get(0);
+            deck.remove(0);
+            return ligneCentrale[index];
+        }
+        return null;
     }
 
     public  String afficherLaLigneCentrale(){
@@ -111,11 +113,11 @@ public class Plateau {
         for (int i=0; i<ligneCentrale.length;i++){
             if (carteASupprimer.equals(ligneCentrale[i])){
                 ligneCentrale[i]=null;
-                return i;
+                retour=i;
             }
         }
 
-        return -1;
+        return retour;
     }
 
     public ArrayList<Joueur> quiCommence(ArrayList<Joueur> liste){
