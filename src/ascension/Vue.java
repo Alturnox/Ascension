@@ -25,9 +25,9 @@ public class Vue extends JFrame {
     public JPanel contentPane;
     public JTextField txtTourjoueur;
     public JButton btnDeck;
-    public JPanel panel_4;
+    public JPanel panelMainJoueur;
     public ButtonV2 carteMainJoueur;
-    public JPanel panel_3;
+    public JPanel panelTapis;
     public JButton btnNeant;
     public JButton btnPasser;
     public JButton btnDefausse;
@@ -40,6 +40,7 @@ public class Vue extends JFrame {
     public Modele m;
     public JPanel panelLigneCentrale;
     public JLabel jlabelPtsHonneur;
+    public JLabel jb;
 
 
     public Vue(Modele m){
@@ -90,8 +91,8 @@ public class Vue extends JFrame {
         panelLigneCentrale.setLayout(new GridLayout(1, 0, 0, 0));
 
 
-        tableauBtnCentrale =new ButtonV2[5];
-        for (int i=0; i<5; i++){
+        tableauBtnCentrale =new ButtonV2[6];
+        for (int i=0; i<6; i++){
             btnCarteCentrale = new ButtonV2(m.p.ligneCentrale[i].getNom() +" r"+m.p.ligneCentrale[i].getRunes()+ " d"+m.p.ligneCentrale[i].getAttaque(),i);
             btnCarteCentrale.addActionListener(cb);
             tableauBtnCentrale[i]=btnCarteCentrale;
@@ -128,30 +129,31 @@ public class Vue extends JFrame {
         contentPane.add(panel_2);
         panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 
-        panel_3 = new JPanel();
-        panel_3.setBounds(89, 222, 600, 68);
-        contentPane.add(panel_3);
-        panel_3.setLayout(new GridLayout(1, 0, 0, 0));
+        panelTapis = new JPanel();
+        panelTapis.setBounds(89, 222, 600, 68);
+        contentPane.add(panelTapis);
+        panelTapis.setLayout(new GridLayout(1, 0, 0, 0));
 
         listeDeBoutons=new ArrayList<ButtonV2>();
-        panel_4 = new JPanel();
-        panel_4.setBounds(100,580,1050 ,50);
-        for (int i=0; i<m.joueur.getHand().size();i++){
-            carteMainJoueur= new ButtonV2(m.joueur.getHand().get(i).getNom(),i);
-            listeDeBoutons.add(carteMainJoueur);
-            listeDeBoutons.get(i).addActionListener(cb);
-            panel_4.add(listeDeBoutons.get(i));
-
-        }
-        contentPane.add(panel_4);
-        panel_4.setLayout(new GridLayout(1, 0, 0, 0));
-
-
-
+        panelMainJoueur = new JPanel();
+        panelMainJoueur.setBounds(100,580,1050 ,50);
+//        for (int i=0; i<m.joueur.getHand().size();i++){
+//            carteMainJoueur= new ButtonV2(m.joueur.getHand().get(i).getNom(),i);
+//            listeDeBoutons.add(carteMainJoueur);
+//            listeDeBoutons.get(i).addActionListener(cb);
+//            panelMainJoueur.add(listeDeBoutons.get(i));
+//
+//        }
+//        contentPane.add(panelMainJoueur);
+        debutMainJoueur();
+        panelMainJoueur.setLayout(new GridLayout(1, 0, 0, 0));
 
 
 
-        JLabel jb= new JLabel("Tour du joueur : " + m.joueurActuel().nomJoueur);
+
+
+
+        jb= new JLabel("Tour du joueur : " + m.joueurActuel().nomJoueur);
         jb.setBounds(258, 11, 200, 20);
 
         jlabelPtsHonneur= new JLabel("Points d'Honneur : " + m.joueurActuel().getPtsHonneur());
@@ -194,9 +196,9 @@ public class Vue extends JFrame {
 
 
     public void carteJouer(ButtonV2 buttonV2) {
-        panel_3.add(buttonV2);
+        panelTapis.add(buttonV2);
 //       listeDeBoutons.remove(buttonV2);  problème détecter : on modifie l'aspect de la boucle pendant le parcours
-        panel_4.remove(buttonV2);
+        panelMainJoueur.remove(buttonV2);
         invalidate();
         validate();
         repaint();
@@ -217,7 +219,7 @@ public class Vue extends JFrame {
 
     public void actualiserLigneCentrale(ButtonV2 bv22, String nomStocke) {
         int idDeStockage=bv22.getIdBouton();
-        panelLigneCentrale.remove(tableauBtnCentrale[bv22.getIdBouton()]);
+         panelLigneCentrale.remove(tableauBtnCentrale[bv22.getIdBouton()]);
 
         tableauBtnCentrale[bv22.getIdBouton()]=new ButtonV2(nomStocke,idDeStockage);
         tableauBtnCentrale[bv22.getIdBouton()].addActionListener(cb);
@@ -235,6 +237,47 @@ public class Vue extends JFrame {
 //        contentPane.add(jlabelPtsHonneur);
 
         jlabelPtsHonneur.setText("Points d'Honneur : " + m.joueurActuel().getPtsHonneur());
+
+        invalidate();
+        validate();
+        repaint();
+    }
+
+    public void actualiserJoueur() {
+        jb.setText("Tour du joueur : " + m.joueurActuel().nomJoueur);
+        actualiserPtsHonneur(m.joueurActuel(),m);
+        actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
+        debutMainJoueur();
+
+
+
+    }
+
+    public void debutMainJoueur(){
+
+        for (int i=0; i<m.joueurActuel().getHand().size();i++){
+            carteMainJoueur= new ButtonV2(m.joueurActuel().getHand().get(i).getNom(),i);
+            listeDeBoutons.add(carteMainJoueur);
+            listeDeBoutons.get(i).addActionListener(cb);
+            panelMainJoueur.add(listeDeBoutons.get(i));
+
+        }
+        contentPane.add(panelMainJoueur);
+        panelMainJoueur.setLayout(new GridLayout(1, 0, 0, 0));
+    }
+
+    public void nettoyerTapis() {
+        panelTapis.removeAll();
+        m.joueurActuel().piocherMain();
+
+        invalidate();
+        validate();
+        repaint();
+    }
+
+    public void nettoyerMain() {
+        panelMainJoueur.removeAll();
+        listeDeBoutons.removeAll(listeDeBoutons);
 
         invalidate();
         validate();

@@ -29,6 +29,17 @@ public class ControlButton implements ActionListener {
             // afficher le neant
         } else if (e.getSource() == fen.btnPasser) {
             // Passer le tour du Joueur / fin tour du joueur
+            m.finDuTour();
+            fen.nettoyerTapis();
+            fen.nettoyerMain();
+            m.passerTour();
+            fen.actualiserJoueur();
+
+
+
+
+
+
         } else if (e.getSource() == fen.btnDefausse) {
             // afficher la defausse
         }
@@ -59,9 +70,5 @@ public class ControlButton implements ActionListener {
             }
         }
 
-//        if(e.getSource()==fen.btnPasser){
-//            m.finDuTour();
-//            fen.clearTapis();
-//        }
     }
 }

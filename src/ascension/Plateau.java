@@ -347,8 +347,8 @@ public class Plateau {
         deck.add(Corrosivewidow3);
         deck.add(Corrosivewidow4);
         deck.add(AvatarOfTheFallen);
-        deck.add(VoidInitiate2);
-        deck.add(VoidInitiate1);
+        deck.add(Voidthirster2);
+        deck.add(Voidthirster1);
         deck.add(ShadowStar2);
         deck.add(ShadowStar1);
         deck.add(Muramasa);
@@ -422,6 +422,13 @@ public class Plateau {
     }
 
 
+    public int perdreDesPointsDhonneurs(Cards c1) {
+        nombreDePtsDHonneur-=c1.getRecompense();
+        if (nombreDePtsDHonneur<0){
+            return 0;
+        }
+        else return nombreDePtsDHonneur;
+    }
 }
 
 

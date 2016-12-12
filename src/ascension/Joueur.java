@@ -23,8 +23,8 @@ public class Joueur {
         deck = new Deck();
         deck.initialiserDeck();
         estEntraindeJouer=false;
-        setAttaque(10000);
-        setRunes(10000);
+        setAttaque(0);
+        setRunes(0);
         setPtsHonneurs(0);
     }
 
@@ -109,6 +109,7 @@ public class Joueur {
             attaqueDispo-=c1.getAttaque();
             gagnerPointsHonneur(c1.getRecompense());
             plat.getNeant().add(c1);
+            plat.perdreDesPointsDhonneurs(c1);
             if (plat.deck.size()>0){
                 plat.deck.remove(c1);
 
@@ -148,12 +149,18 @@ public class Joueur {
             for (Cards carteF : getTapis()) {
                 getDefausse().add(carteF);
         }
-            getDefausse().clear();
+            getTapis().clear();
+        }
+        if (getHand().size()>0){
+            for (Cards carteH : getHand()){
+                getDefausse().add(carteH);
+            }
+            getHand().clear();
         }
         attaqueDispo=0;
         nbRunesDispo=0;
-        deck.piocherMain();
-        estEntraindeJouer=false;
+        piocherMain();
+//        estEntraindeJouer=false;
     }
 
     public void printPtsHonneur(){

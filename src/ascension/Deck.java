@@ -18,6 +18,7 @@ public class Deck extends ArrayList {
 
     public int nbDeCarteRestanteAPiocher;
     public ArrayList<Cards> construc;
+    public int tailleDeLaListe;
 
 
     public Deck(){
@@ -39,24 +40,42 @@ public class Deck extends ArrayList {
 
 
     public void piocher(int nbDeCartePiocher) {
-       remplirDeck();
-        if (list.size()<nbDeCartePiocher){
-            nbDeCarteRestanteAPiocher=nbDeCartePiocher-list.size();
-            for (int i=0; i<=list.size();i++){
-                hand.add(list.get(0));
-                list.remove(0);
-            }
-            remplirDeck();
-            for (int j=0; j<nbDeCarteRestanteAPiocher ; j++) {
 
-                hand.add(list.get(0));
-                list.remove(0);
+        ////// out of bound exception
+//       remplirDeck();
+//        if (list.size()<nbDeCartePiocher){
+//            nbDeCarteRestanteAPiocher=nbDeCartePiocher-list.size();
+//            tailleDeLaListe=list.size();
+//            System.out.println(nbDeCarteRestanteAPiocher + ' '+ tailleDeLaListe);
+//            for (int i=0; i<nbDeCarteRestanteAPiocher;i++){
+//                if (list.size()==0){
+//                    remplirDeck();
+//                }
+//                getHand().add(list.get(0));
+//                System.out.println(list.get(0).getNom());
+//                getList().remove(0);
+//            }
+//
+//            for (int j=0; j<nbDeCartePiocher-nbDeCarteRestanteAPiocher ; j++) {
+//                if (list.size()==0){
+//                    remplirDeck();
+//                }
+//                hand.add(list.get(0));
+//                list.remove(0);
+//            }
+//        }else {
+//            for (int k =0; k<nbDeCartePiocher; k++){
+//                hand.add(list.get(0));
+//                list.remove(0);
+//            }
+//        }
+
+        for (int i=0; i<nbDeCartePiocher; i++){
+            if (list.size()==0){
+                remplirDeck();
             }
-        }else {
-            for (int k =0; k<nbDeCartePiocher; k++){
-                hand.add(list.get(0));
-                list.remove(0);
-            }
+            getHand().add(list.get(0));
+            getList().remove(0);
         }
     }
 
@@ -79,7 +98,7 @@ public class Deck extends ArrayList {
 
     public void remplirDeck(){
         if (isListVide()){
-            for (int i=0;i<list.size();i++){
+            for (int i=0;i<defausse.size();i++){
                 Cards c =defausse.get(i);
                 list.add(c);
             }
@@ -90,6 +109,7 @@ public class Deck extends ArrayList {
 
     public void piocherMain() {
         piocher(5);
+
     }
 
     public void initialiserDeck(){
