@@ -19,7 +19,8 @@ public class Modele extends JPanel {
         p.listeDeJoueurs.add(joueur2);
         p.quiCommence(p.listeDeJoueurs);
         aQuiDeJouer=0;
-        joueurActuel().piocherMain();
+        joueur.piocherMain();
+        joueur2.piocherMain();
         setLayout(null);
     }
 

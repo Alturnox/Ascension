@@ -41,6 +41,9 @@ public class Vue extends JFrame {
     public JPanel panelLigneCentrale;
     public JLabel jlabelPtsHonneur;
     public JLabel jb;
+    public JButton btnMystique;
+    public JButton btnInfanteriesLourdes;
+    public JButton btnCultiste;
 
 
     public Vue(Modele m){
@@ -76,14 +79,17 @@ public class Vue extends JFrame {
         contentPane.add(habitants);
         habitants.setLayout(new GridLayout(1, 0, 0, 0));
 
-        JButton btnHabitant = new JButton(m.p.tableauHabitantsR[0].getNom());
-        habitants.add(btnHabitant);
+        btnMystique = new JButton(m.p.tableauHabitantsR[0].getNom());
+        btnMystique.addActionListener(cb);
+        habitants.add(btnMystique);
 
-        JButton btnHabitant_1 = new JButton(m.p.tableauHabitantsR[1].getNom());
-        habitants.add(btnHabitant_1);
+        btnInfanteriesLourdes = new JButton(m.p.tableauHabitantsR[1].getNom());
+        btnInfanteriesLourdes.addActionListener(cb);
+        habitants.add(btnInfanteriesLourdes);
 
-        JButton btnHabitant_2 = new JButton(m.p.tableauHabitantsR[2].getNom());
-        habitants.add(btnHabitant_2);
+        btnCultiste = new JButton(m.p.tableauHabitantsR[2].getNom());
+        btnCultiste.addActionListener(cb);
+        habitants.add(btnCultiste);
 
         panelLigneCentrale = new JPanel();
         panelLigneCentrale.setBounds(40, 137, 1150, 74);
@@ -137,15 +143,15 @@ public class Vue extends JFrame {
         listeDeBoutons=new ArrayList<ButtonV2>();
         panelMainJoueur = new JPanel();
         panelMainJoueur.setBounds(100,580,1050 ,50);
-//        for (int i=0; i<m.joueur.getHand().size();i++){
-//            carteMainJoueur= new ButtonV2(m.joueur.getHand().get(i).getNom(),i);
-//            listeDeBoutons.add(carteMainJoueur);
-//            listeDeBoutons.get(i).addActionListener(cb);
-//            panelMainJoueur.add(listeDeBoutons.get(i));
-//
-//        }
-//        contentPane.add(panelMainJoueur);
-        debutMainJoueur();
+        for (int i=0; i<m.joueur.getHand().size();i++){
+            carteMainJoueur= new ButtonV2(m.joueur.getHand().get(i).getNom(),i);
+            listeDeBoutons.add(carteMainJoueur);
+            listeDeBoutons.get(i).addActionListener(cb);
+            panelMainJoueur.add(listeDeBoutons.get(i));
+
+        }
+        contentPane.add(panelMainJoueur);
+
         panelMainJoueur.setLayout(new GridLayout(1, 0, 0, 0));
 
 
@@ -204,6 +210,19 @@ public class Vue extends JFrame {
         repaint();
 
     }
+    public void actualiserJ(Joueur joueur, Modele m){
+        contentPane.remove(jlabelRunesEtAttaqueDispo);
+        jlabelRunesEtAttaqueDispo= new JLabel("Runes :  " + joueur.getRunes() + "  Attaque : " + joueur.attaqueDispo);
+        jlabelRunesEtAttaqueDispo.setBounds(1200,460,500,52);
+        contentPane.add(jlabelRunesEtAttaqueDispo);
+
+        jlabelPtsHonneur.setText("Points d'Honneur : " + m.joueurActuel().getPtsHonneur());
+
+        invalidate();
+        validate();
+        repaint();
+
+    }
 
     public void actualiserRunesEtAttaqueJoueur(Joueur joueur,Modele m) {
         contentPane.remove(jlabelRunesEtAttaqueDispo);
@@ -254,7 +273,7 @@ public class Vue extends JFrame {
     }
 
     public void debutMainJoueur(){
-
+            panelMainJoueur.removeAll();
         for (int i=0; i<m.joueurActuel().getHand().size();i++){
             carteMainJoueur= new ButtonV2(m.joueurActuel().getHand().get(i).getNom(),i);
             listeDeBoutons.add(carteMainJoueur);
@@ -263,7 +282,7 @@ public class Vue extends JFrame {
 
         }
         contentPane.add(panelMainJoueur);
-        panelMainJoueur.setLayout(new GridLayout(1, 0, 0, 0));
+
     }
 
     public void nettoyerTapis() {

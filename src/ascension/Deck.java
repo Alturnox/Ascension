@@ -15,9 +15,10 @@ public class Deck extends ArrayList {
     public ArrayList<Cards> hand;
     public ArrayList<Cards> defausse;
     public ArrayList<Cards> tapis;
+    public ArrayList<Cards> construc;
 
     public int nbDeCarteRestanteAPiocher;
-    public ArrayList<Cards> construc;
+
     public int tailleDeLaListe;
 
 
@@ -40,36 +41,6 @@ public class Deck extends ArrayList {
 
 
     public void piocher(int nbDeCartePiocher) {
-
-        ////// out of bound exception
-//       remplirDeck();
-//        if (list.size()<nbDeCartePiocher){
-//            nbDeCarteRestanteAPiocher=nbDeCartePiocher-list.size();
-//            tailleDeLaListe=list.size();
-//            System.out.println(nbDeCarteRestanteAPiocher + ' '+ tailleDeLaListe);
-//            for (int i=0; i<nbDeCarteRestanteAPiocher;i++){
-//                if (list.size()==0){
-//                    remplirDeck();
-//                }
-//                getHand().add(list.get(0));
-//                System.out.println(list.get(0).getNom());
-//                getList().remove(0);
-//            }
-//
-//            for (int j=0; j<nbDeCartePiocher-nbDeCarteRestanteAPiocher ; j++) {
-//                if (list.size()==0){
-//                    remplirDeck();
-//                }
-//                hand.add(list.get(0));
-//                list.remove(0);
-//            }
-//        }else {
-//            for (int k =0; k<nbDeCartePiocher; k++){
-//                hand.add(list.get(0));
-//                list.remove(0);
-//            }
-//        }
-
         for (int i=0; i<nbDeCartePiocher; i++){
             if (list.size()==0){
                 remplirDeck();

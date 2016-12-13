@@ -27,21 +27,33 @@ public class ControlButton implements ActionListener {
 
         if (e.getSource() == fen.btnNeant) {
             // afficher le neant
-        } else if (e.getSource() == fen.btnPasser) {
+        }
+        if (e.getSource() == fen.btnPasser) {
             // Passer le tour du Joueur / fin tour du joueur
-            m.finDuTour();
             fen.nettoyerTapis();
             fen.nettoyerMain();
+            m.finDuTour();
             m.passerTour();
             fen.actualiserJoueur();
 
 
-
-
-
-
-        } else if (e.getSource() == fen.btnDefausse) {
+        }
+        if (e.getSource() == fen.btnDefausse) {
             // afficher la defausse
+        }
+
+        if (e.getSource()==fen.btnMystique){
+            m.joueurActuel().acquerirUneCarteRunes(m.p.tableauHabitantsR[0],m.p);
+            fen.actualiserJ(m.joueurActuel(),m);
+        }
+        if (e.getSource()==fen.btnInfanteriesLourdes){
+            m.joueurActuel().acquerirUneCarteRunes(m.p.tableauHabitantsR[1],m.p);
+            fen.actualiserJ(m.joueurActuel(),m);
+        }
+        if (e.getSource()==fen.btnCultiste){
+            m.joueurActuel().tuerUneCarteAvecDeLattaque(m.p.tableauHabitantsR[2],m.p);
+            fen.actualiserJ(m.joueurActuel(),m);
+
         }
 
         for (ButtonV2 bv2 : fen.listeDeBoutons) {
@@ -49,6 +61,7 @@ public class ControlButton implements ActionListener {
 //            // Idea : recup l'index, puis le nom de la carte , retourner la le nom de la carte direct pour
               indexDelaCarte=fen.retourneIndexDeLaCarte(bv2);
                m.joueurJoueUneCarte(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
+                faireLesEffets(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
                 fen.carteJouer(bv2);
                 fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
                 bv2.removeActionListener(this);
@@ -68,6 +81,43 @@ public class ControlButton implements ActionListener {
                     fen.actualiserPtsHonneur(m.joueurActuel(),m);
                 }
             }
+        }
+
+    }
+
+    public void faireLesEffets(Joueur joueur, Cards cards, Plateau p) {
+        // les effets qui sont la influence la vue ou ont besoins d'une interaction avec la vue
+        /**liste des effets : 0 1 2  -> piocher 1 2 3 cartes
+         * 15 16  tuer un mostre avec 4 ou 6 D gratuitement
+         * 17 : bannir une carte centrale
+         * 18 : se défausser d'une carte , si on le fait en pioche deux
+         * 19 copy l'effet d'un héros jouer ce tour ci
+         * 20 : une fois par tour vous piocher une carte
+         * 21 System.out.println("You may banish this Construct to take an additional turn after this one.");
+         * 22  System.out.println("Acquire a Hero without paying its cost. Place in on top of your deck.");
+         * 25 : piocher une carte
+         * 26    System.out.println("Once per turn, gain 1 runes, the first time you play a lifebound hero, each turn gain 1 recompense");
+         * 27 "Once per turn , gain 1d    "Once per turn, you may spend 4r to gain 3 recompense");
+         * 28 : Draw a card
+         * 28 : System.out.println("Gain 1d or 1r");
+         * 30 : Gain 2r You pay 1R less the next time you acquire a Construc this turn"
+         * 31 Once per turn, when you put a Mechana Construc into play (including this one) , draw a card"
+         * 32 Once per turn, gain 2d35 : "Once per turn, when you acquire another Mechana Construc, you may put it directly into play
+         *.You may spend it only to acquire Mechana Construct");
+         * Once per turn ,gain 1 r . you may spend it only to acquire Mechana Construc
+         *
+         * 37 : "Banish a card in you hand"
+         * 38 : "Banish a card in you hand or discard pile"
+         * 39 Banish a card in you hand or discard pile
+         * 43  Unbanishable You may acquire or defeat any car in the center row without paying its cost"
+         * 44 Each opponent must destryo a Construc he controls
+         * 45 "Banish a card un the center row and/or in you discard pile"
+         * 46 Banish a card un the center row
+         * 47 If an opponent has more than one construct, that player must destroy all but one Construct he controls
+         * 48 Take a card at random from each oppenent's hand and add that card to your hands
+         */
+        switch (cards.getEffet()){
+
         }
 
     }

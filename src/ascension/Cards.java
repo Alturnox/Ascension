@@ -106,240 +106,157 @@ public class Cards {
             case 0:
                 joueurQuiJoueLaCarte.deck.piocher(1);
                 break;
-        }
-        switch (idEffet) {
             case 1:
                 joueurQuiJoueLaCarte.deck.piocher(2);
                 break;
-        }
-        switch (idEffet) {
             case 2:
                 joueurQuiJoueLaCarte.deck.piocher(3);
                 break;
-        }
-        switch (idEffet) {
             case 3:
                 joueurQuiJoueLaCarte.gagnerDegats(1);
                 break;
-        }
-        switch (idEffet) {
             case 4:
                 joueurQuiJoueLaCarte.gagnerDegats(2);
                 break;
-        }
-        switch (idEffet) {
             case 5:
                 joueurQuiJoueLaCarte.gagnerDegats(3);
 
                 break;
-        }
-        switch (idEffet) {
             case 6:
                 joueurQuiJoueLaCarte.gagnerDegats(4);
                 break;
-        }
-        switch (idEffet) {
             case 7:
                 joueurQuiJoueLaCarte.gagnerRunes(1);
                 break;
-        }
-        switch (idEffet) {
             case 8:
                 gagnerDesRunes(joueurQuiJoueLaCarte,2);
                 break;
-        }
-        switch (idEffet) {
             case 9:
                 gagnerDesRunes(joueurQuiJoueLaCarte,3);
                 break;
-        }
-        switch (idEffet) {
             case 11:
                 gagnerDesRunes(joueurQuiJoueLaCarte,1);
                 gagnerDesDegats(joueurQuiJoueLaCarte,1);
                 break;
-        }
-        switch (idEffet) {
+            case 12:
+                joueurQuiJoueLaCarte.gagnerPointsHonneur(1);
+                break;
             case 15:
                 joueurQuiJoueLaCarte.tuerUneCarteAvecDeLattaqueGratuitement(plateau);
                System.out.println("DEfeat a monster that has 4 D or less without paying it cost");
                 break;
-        }
-        switch (idEffet) {
             case 16:
                System.out.println("DEfeat a monster that has 6 D or less without paying it cost");
                 break;
-        }
-        switch (idEffet) {
             case 17:
                 joueurQuiJoueLaCarte.deck.piocher(1);
                System.out.println(" You may banish a card in the center row");
                 break;
-        }
-        switch (idEffet) {
             case 18:
                System.out.println("Discard a card, if you do,  draw two cards");
                 break;
-        }
-        switch (idEffet) {
             case 19:
                System.out.println("Copy l'effet d'un Héros joué ce tour-ci");
                 break;
-        }
-        switch (idEffet) {
             case 20:
                System.out.println("Once per turn you may draw a card");
                 break;
-        }
-        switch (idEffet) {
             case 21:
                System.out.println("You may banish this Construct to take an additional turn after this one.");
                 break;
-        }
-        switch (idEffet) {
             case 22:
                System.out.println("Acquire a Hero without paying its cost. Place in on top of your deck.");
                 break;
-        }
-        switch (idEffet) {
             case 23:
                 joueurQuiJoueLaCarte.gagnerPointsHonneur(1);
                 gagnerDesRunes(joueurQuiJoueLaCarte,1);
                 break;
-        }
-        switch (idEffet) {
             case 24:
                gagnerDesRunes(joueurQuiJoueLaCarte,2);
-               System.out.println("If you have played another lifebound hero this turn gain 2d");
+                verifLifebound(joueurQuiJoueLaCarte);
                 break;
-        }
-        switch (idEffet) {
             case 25:
                 gagnerDesRunes(joueurQuiJoueLaCarte,1);
                 joueurQuiJoueLaCarte.deck.piocher(1);
                 break;
-        }
-        switch (idEffet) {
             case 26:
                System.out.println("Once per turn, gain 1 runes, the first time you play a lifebound hero, each turn gain 1 recompense");
                 break;
-        }
-        switch (idEffet) {
             case 27:
                System.out.println("Once per turn , gain 1d" +
                        "Once per turn, you may spend 4r to gain 3 recompense");
                 break;
-        }
-        switch (idEffet) {
             case 28:
                 gagnerDesDegats(joueurQuiJoueLaCarte,2);
                 plusDeDeuxConstructeur(joueurQuiJoueLaCarte);
                System.out.println("Draw a card if you control 2 or moreConstrcut");
                 break;
-        }
-        switch (idEffet) {
             case 29:
                System.out.println("Gain 1d or 1r");
                 break;
-        }
-        switch (idEffet) {
             case 30:
                 joueurQuiJoueLaCarte.gagnerPointsHonneur(2);
                System.out.println("Gain 2r You pay 1R less the next time you acquire a Construc this turn");
                 break;
-        }
-        switch (idEffet) {
             case 31:
                 joueurQuiJoueLaCarte.gagnerPointsHonneur(2);
                System.out.println("Once per turn, when you put a Mechana Construc into play (including this one) , draw a card");
                 break;
-        }
-        switch (idEffet) {
             case 32:
                 joueurQuiJoueLaCarte.gagnerPointsHonneur(2);
                System.out.println("Once per turn, gain 2d.You may spend it only to acquire Mechana Construct");
                 break;
-        }
-        switch (idEffet) {
             case 33:
                 joueurQuiJoueLaCarte.gagnerPointsHonneur(2);
-               System.out.println(" Once per turn, gain 1d for each Mechana Construc you control");
+                System.out.println(" Once per turn");
+                gagner1DParTourPourChaqueMechaConstruct(joueurQuiJoueLaCarte);
+
                 break;
-        }
-        switch (idEffet) {
             case 34:
                System.out.println("You may treat all Construcs as Mechana Construcs");
                 break;
-        }
-        switch (idEffet) {
             case 35:
                System.out.println("Once per turn, when you acquire another Mechana Construc, you may put it directly into play");
                 break;
-        }
-        switch (idEffet) {
             case 36:
                System.out.println("Once per turn ,gain 1 r . you may spend it only to acquire Mechana Construc");
                 break;
-        }
-        switch (idEffet) {
             case 37:
                 joueurQuiJoueLaCarte.deck.piocher(2);
                System.out.println("Banish a card in you hand");
                 break;
-        }
-        switch (idEffet) {
             case 38:
                 gagnerDesDegats(joueurQuiJoueLaCarte,2);
                System.out.println("Banish a card in you hand or discard pile");
                 break;
-        }
-        switch (idEffet) {
             case 39:
                 gagnerDesDegats(joueurQuiJoueLaCarte,1);
                System.out.println("Banish a card in you hand or discard pile");
                 break;
-        }
-        switch (idEffet) {
             case 40:
                System.out.println("Once per turn, gain 3d");
                 break;
-        }
-        switch (idEffet) {
             case 41:
                System.out.println("Once per turn, gain 1d");
                 break;
-        }
-        switch (idEffet) {
             case 42:
                System.out.println("Once per turn gain 1 The first time you deafeat a monster in the center row each turn, gain 1 R");
                 break;
-        }
-        switch (idEffet) {
             case 43:
                System.out.println("Unbanishable You may acquire or defeat any car in the center row without paying its cost");
                 break;
-        }
-        switch (idEffet) {
             case 44:
                System.out.println("Each opponent must destryo a Construc he controls");
                 break;
-        }
-        switch (idEffet) {
             case 45:
                 System.out.println("Banish a card un the center row and/or in you discard pile");
                 break;
-        }
-        switch (idEffet) {
             case 46:
                 System.out.println("Banish a card un the center row");
                 break;
-        }
-        switch (idEffet) {
             case 47:
                 System.out.println("If an opponent has more than one construct, that player must destroy all but one Construct he controls");
                 break;
-        }
-        switch (idEffet) {
             case 48:
                 System.out.println("Take a card at random from each oppenent's hand and add that card to your hands");
                 break;
@@ -347,18 +264,40 @@ public class Cards {
 
     }
 
-    public void plusDeDeuxConstructeur(Joueur joueurQuiJoueLaCarte) {
-        //pas finis
-        int i=0;
-        for (Cards c : joueurQuiJoueLaCarte.getConstruct()){
-            if (c.type.equals("Constructeur Mechana")){
-                i++;
+    private void gagner1DParTourPourChaqueMechaConstruct(Joueur joueurQuiJoueLaCarte) {
+        int gainD=0;
+        if (!joueurQuiJoueLaCarte.getConstruct().isEmpty()){
+            for (Cards carte : joueurQuiJoueLaCarte.getConstruct()){
+                if (carte.type.equals("Constructeur Mechana")){
+                    gainD+=1;
+                }
             }
-            if (i>=2){
-                // a finir
-            }
-
         }
+
+        gagnerDesDegats(joueurQuiJoueLaCarte,gainD);
+    }
+
+    public void verifLifebound(Joueur joueurQuiJoueLaCarte) {
+        for (Cards carte : joueurQuiJoueLaCarte.getTapis()){
+            if (carte.type.equals("Héros Lifebound")){
+                gagnerDesDegats(joueurQuiJoueLaCarte,2);
+            }
+        }
+    }
+
+    public void plusDeDeuxConstructeur(Joueur joueurQuiJoueLaCarte) {
+        int i=0;
+        if (!joueurQuiJoueLaCarte.getConstruct().isEmpty()){
+            for (Cards c : joueurQuiJoueLaCarte.getConstruct()){
+                if (c.type.equals("Constructeur Mechana")){
+                    i++;
+                }
+            }
+        }
+        if (i>1){
+            joueurQuiJoueLaCarte.piocher(1);
+        }
+
     }
 
 

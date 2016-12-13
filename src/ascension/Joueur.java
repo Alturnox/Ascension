@@ -141,8 +141,7 @@ public class Joueur {
         deck.piocherMain();
     }
 
-
-
+    public void piocher(int nbCarteAPiocher){ deck.piocher(nbCarteAPiocher); }
 
     public void finDuTour(){
         if (getTapis().size()>0){
