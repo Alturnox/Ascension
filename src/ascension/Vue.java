@@ -196,6 +196,8 @@ public class Vue extends JFrame {
 
 
     public int retourneIndexDeLaCarte(ButtonV2 carteMainJoueur) {
+        System.out.println(carteMainJoueur.getText()+ "  return " + carteMainJoueur.idBouton);
+        System.out.println(listeDeBoutons.indexOf(carteMainJoueur) + "   index of " );
         return listeDeBoutons.indexOf(carteMainJoueur);
 
     }
@@ -270,6 +272,7 @@ public class Vue extends JFrame {
 
 
 
+
     }
 
     public void debutMainJoueur(){
@@ -301,5 +304,19 @@ public class Vue extends JFrame {
         invalidate();
         validate();
         repaint();
+    }
+
+    public void actualiserMain(Modele m) {
+       m.joueurActuel().printHand();
+    }
+
+    public void redefLesBoutons() {
+        for (ButtonV2 bv2 : listeDeBoutons){
+            bv2.idBouton-=1;
+        }
+    }
+
+    public int positionBv2(ButtonV2 bv2) {
+        return listeDeBoutons.indexOf(bv2);
     }
 }

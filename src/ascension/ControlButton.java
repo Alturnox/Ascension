@@ -13,11 +13,13 @@ public class ControlButton implements ActionListener {
     public Vue fen;
     public int indexDelaCarte;
     public int intRetourToucherUneCarte;
+    private boolean jeTestJusteUnTruc;
 
 
     public ControlButton(Vue fen, Modele m) {
         this.m = m;
         this.fen = fen;
+        this.jeTestJusteUnTruc=false;
 
     }
 
@@ -51,7 +53,8 @@ public class ControlButton implements ActionListener {
             fen.actualiserJ(m.joueurActuel(),m);
         }
         if (e.getSource()==fen.btnCultiste){
-            m.joueurActuel().tuerUneCarteAvecDeLattaque(m.p.tableauHabitantsR[2],m.p);
+            // bug
+            m.tuerLeCultiste();
             fen.actualiserJ(m.joueurActuel(),m);
 
         }
@@ -60,12 +63,24 @@ public class ControlButton implements ActionListener {
             if (e.getSource() == bv2) {
 //            // Idea : recup l'index, puis le nom de la carte , retourner la le nom de la carte direct pour
               indexDelaCarte=fen.retourneIndexDeLaCarte(bv2);
-               m.joueurJoueUneCarte(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
+                m.joueurJoueUneCarte(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
                 faireLesEffets(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
+                // un test pour supprimer la main
+                jeTestJusteUnTruc=true;
+                //
                 fen.carteJouer(bv2);
                 fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
                 bv2.removeActionListener(this);
+
             }
+        }
+
+        if (jeTestJusteUnTruc==true){
+            fen.listeDeBoutons.remove(indexDelaCarte);
+            m.joueurActuel().getHand().remove(indexDelaCarte);
+
+            jeTestJusteUnTruc=false;
+
         }
 
         for (ButtonV2 bv22 : fen.tableauBtnCentrale) {
@@ -117,6 +132,15 @@ public class ControlButton implements ActionListener {
          * 48 Take a card at random from each oppenent's hand and add that card to your hands
          */
         switch (cards.getEffet()){
+            case 0:
+                fen.actualiserMain(m);
+                break;
+            case 1:
+                fen.actualiserMain(m);
+                break;
+            case 2:
+                fen.actualiserMain(m);
+                break;
 
         }
 

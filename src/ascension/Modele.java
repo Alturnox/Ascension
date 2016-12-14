@@ -58,4 +58,11 @@ public class Modele extends JPanel {
         }
 
     }
+
+    public void tuerLeCultiste() {
+        if (joueurActuel().attaqueDispo>=2){
+            joueurActuel().gagnerPointsHonneur(1);
+            joueurActuel().attaqueDispo-=2;
+        }
+    }
 }

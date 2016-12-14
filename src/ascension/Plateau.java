@@ -145,7 +145,7 @@ public class Plateau {
     public  void creerLesHabitants(){
         tableauHabitantsR[0]=new Cards("Mystique",8,"Héros",3,0,"",1);
         tableauHabitantsR[1]=new Cards("Infanteries lourdes",4,"Héros",2,0,"",1);
-        tableauHabitantsR[2]=new Cards("Cultiste",12,"Monstre",0,2,"",0);
+        tableauHabitantsR[2]=new Cards("Cultiste",400,"Monstre",0,2,"",1);
 
 
     }

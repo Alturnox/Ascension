@@ -141,6 +141,10 @@ public class Cards {
             case 12:
                 joueurQuiJoueLaCarte.gagnerPointsHonneur(1);
                 break;
+            case 14:
+                joueurQuiJoueLaCarte.gagnerPointsHonneur(2);
+                joueurQuiJoueLaCarte.piocher(1);
+                break;
             case 15:
                 joueurQuiJoueLaCarte.tuerUneCarteAvecDeLattaqueGratuitement(plateau);
                System.out.println("DEfeat a monster that has 4 D or less without paying it cost");

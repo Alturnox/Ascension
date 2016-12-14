@@ -134,6 +134,9 @@ public class Joueur {
     public void jouerUneCarte(Cards cards, Plateau plateau){
         getTapis().add(cards);
         cards.effetDeCarte(cards.getEffet(),this, plateau);
+        System.out.println(" Hand : ");
+        printHand();
+
 
     }
 
@@ -190,5 +193,13 @@ public class Joueur {
     }
 
 
+    public void printHand() {
+        if (!getHand().isEmpty()){
+            for (Cards c : getHand()){
+                c.print();
+            }
 
+        }
+
+    }
 }
