@@ -76,13 +76,15 @@ public class Plateau {
         return ligneCentrale;
     }
 
-    public Cards remplacerLaLigneCentrale(int index) {
-        if (deck.size()>0){
-            ligneCentrale[index]=deck.get(0);
-            deck.remove(0);
-            return ligneCentrale[index];
-        }
-        return null;
+    public void remplacerLaLigneCentrale(Cards c) {
+        remplirLeDeck();
+           for (int i=0; i< ligneCentrale.length; i++){
+               if (ligneCentrale[i].equals(c)){
+                   ligneCentrale[i]=deck.get(0);
+                   deck.remove(0);
+                   neant.add(c);
+               }
+           }
     }
 
     public  String afficherLaLigneCentrale(){

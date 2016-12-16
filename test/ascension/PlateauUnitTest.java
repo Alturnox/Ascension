@@ -41,26 +41,26 @@ public class PlateauUnitTest {
 
     }
 
-    @Test
-    public void testRemplacerLaLigneCentrale(){
-        Plateau p=new Plateau();
-        Cards c1=new Cards("c1");
-        Cards c2=new Cards("c2");
-        Cards c3=new Cards("c3");
-        Cards c4=new Cards("c4");
-        Cards c5=new Cards("c5");
-        Cards c6=new Cards("c6");
-        Cards c7=new Cards("c7");
-        p.deck.add(c1);
-        p.deck.add(c2);
-        p.deck.add(c3);
-        p.deck.add(c4);
-        p.deck.add(c5);
-        p.deck.add(c6);
-        p.deck.add(c7);
-        p.faireLaLigneCentrale();
-        Assert.assertEquals(c7,p.remplacerLaLigneCentrale(4));
-    }
+//    @Test
+//    public void testRemplacerLaLigneCentrale(){
+//        Plateau p=new Plateau();
+//        Cards c1=new Cards("c1");
+//        Cards c2=new Cards("c2");
+//        Cards c3=new Cards("c3");
+//        Cards c4=new Cards("c4");
+//        Cards c5=new Cards("c5");
+//        Cards c6=new Cards("c6");
+//        Cards c7=new Cards("c7");
+//        p.deck.add(c1);
+//        p.deck.add(c2);
+//        p.deck.add(c3);
+//        p.deck.add(c4);
+//        p.deck.add(c5);
+//        p.deck.add(c6);
+//        p.deck.add(c7);
+//        p.faireLaLigneCentrale();
+//        Assert.assertEquals(c7,p.remplacerLaLigneCentrale(4));
+//    }
 
 
 

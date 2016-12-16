@@ -240,11 +240,12 @@ public class Vue extends JFrame {
 
     public void actualiserLigneCentrale(ButtonV2 bv22, String nomStocke) {
         int idDeStockage=bv22.getIdBouton();
-         panelLigneCentrale.remove(tableauBtnCentrale[bv22.getIdBouton()]);
+//         panelLigneCentrale.remove(tableauBtnCentrale[bv22.getIdBouton()]);
 
-        tableauBtnCentrale[bv22.getIdBouton()]=new ButtonV2(nomStocke,idDeStockage);
-        tableauBtnCentrale[bv22.getIdBouton()].addActionListener(cb);
-        panelLigneCentrale.add(tableauBtnCentrale[idDeStockage]);
+//        tableauBtnCentrale[bv22.getIdBouton()]=new ButtonV2(nomStocke,idDeStockage);
+        tableauBtnCentrale[bv22.getIdBouton()].setText(nomStocke);
+//        tableauBtnCentrale[bv22.getIdBouton()].addActionListener(cb);
+        //panelLigneCentrale.add(tableauBtnCentrale[idDeStockage]);
         invalidate();
         validate();
         repaint();
@@ -324,4 +325,10 @@ public class Vue extends JFrame {
     public int positionBv2(ButtonV2 bv2) {
         return listeDeBoutons.indexOf(bv2);
     }
+
+//    public void piocherUneMain() {
+//        int tailleListe=0;
+//        tailleListe=m.joueurActuel().getHand().size()-1;
+//        carteMainJoueur=new ButtonV2(m.joueurActuel().getHand().get(-1).getNom(),)
+//    }
 }

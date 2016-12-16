@@ -84,7 +84,6 @@ public class ControlButton implements ActionListener {
         }
 
         for (ButtonV2 bv22 : fen.tableauBtnCentrale) {
-            // problememe a resoudre : si la carte n'est pas "achetable" les boutons changet de place
             if (e.getSource() == bv22) {
                 // Faut differencier si on veut tuer ou acquerir la carte
                 int intRetourner=m.toucherAUneCarteCentraleM(m.trouverLaBonneCarteCentrale(bv22.getIdBouton()),m.p,m.joueurActuel());
@@ -133,12 +132,6 @@ public class ControlButton implements ActionListener {
          */
         switch (cards.getEffet()){
             case 0:
-                fen.actualiserMain(m);
-                break;
-            case 1:
-                fen.actualiserMain(m);
-                break;
-            case 2:
                 fen.actualiserMain(m);
                 break;
 

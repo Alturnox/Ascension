@@ -97,7 +97,7 @@ public class Joueur {
                 acquerirUneCarteRunes(c1,plat);
             }
             nbRunesDispo-=c1.getRunes();
-            plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
+            plat.remplacerLaLigneCentrale(c1);
             return 2;
 
         }
@@ -110,16 +110,19 @@ public class Joueur {
             gagnerPointsHonneur(c1.getRecompense());
             plat.getNeant().add(c1);
             plat.perdreDesPointsDhonneurs(c1);
-            if (plat.deck.size()>0){
-                plat.deck.remove(c1);
-
+//            if (plat.deck.size()>0){
+//                plat.deck.remove(c1);
+//
+//            }
+//            else
+//            {
+//                plat.remplirLeDeck();
+//                tuerUneCarteAvecDeLattaque(c1,plat);
+//            }
+            if (plat.deck.size() > 0){
+                plat.remplacerLaLigneCentrale(c1);
             }
-            else
-            {
-                plat.remplirLeDeck();
-                tuerUneCarteAvecDeLattaque(c1,plat);
-            }
-            plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
+//            plat.remplacerLaLigneCentrale(plat.supprimerCarteCentrale(c1));
             return 1;
 
         }
@@ -128,7 +131,9 @@ public class Joueur {
 
     public void tuerUneCarteAvecDeLattaqueGratuitement(Plateau plateau){
         // a faire
+
     }
+
 
 
     public void jouerUneCarte(Cards cards, Plateau plateau){
