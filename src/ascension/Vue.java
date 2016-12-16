@@ -307,7 +307,12 @@ public class Vue extends JFrame {
     }
 
     public void actualiserMain(Modele m) {
-       m.joueurActuel().printHand();
+        int tailleListe=0;
+        tailleListe=m.joueurActuel().getHand().size()-1;
+        carteMainJoueur=new ButtonV2(m.joueurActuel().getHand().get(tailleListe).getNom(),tailleListe);
+        listeDeBoutons.add(carteMainJoueur);
+        listeDeBoutons.get(tailleListe).addActionListener(cb);
+        panelMainJoueur.add(listeDeBoutons.get(tailleListe));
     }
 
     public void redefLesBoutons() {
