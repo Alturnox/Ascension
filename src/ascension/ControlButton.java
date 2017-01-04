@@ -5,6 +5,8 @@ package ascension;
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
+
 /**
  * Created by user on 20/05/2016.
  */
@@ -14,12 +16,15 @@ public class ControlButton implements ActionListener {
     public int indexDelaCarte;
     public int intRetourToucherUneCarte;
     private boolean jeTestJusteUnTruc;
+    public ButtonV2 bv2;
+    public boolean bannirUneCarteCentrale=false;
 
 
     public ControlButton(Vue fen, Modele m) {
         this.m = m;
         this.fen = fen;
         this.jeTestJusteUnTruc=false;
+        this.bannirUneCarteCentrale=false;
 
     }
 
@@ -59,8 +64,9 @@ public class ControlButton implements ActionListener {
 
         }
 
-        for (ButtonV2 bv2 : fen.listeDeBoutons) {
-            if (e.getSource() == bv2) {
+        for (Iterator<ButtonV2> iterator= fen.listeDeBoutons.iterator(); iterator.hasNext();) {
+            bv2=iterator.next();
+            if (e.getSource() == bv2 ) {
 //            // Idea : recup l'index, puis le nom de la carte , retourner la le nom de la carte direct pour
               indexDelaCarte=fen.retourneIndexDeLaCarte(bv2);
                 m.joueurJoueUneCarte(m.joueurActuel(),m.trouverLaBonneCarte(indexDelaCarte),m.p);
@@ -70,6 +76,7 @@ public class ControlButton implements ActionListener {
                 //
                 fen.carteJouer(bv2);
                 fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
+                fen.actualiserPtsHonneur(m.joueurActuel(),m);
                 bv2.removeActionListener(this);
 
             }
@@ -86,13 +93,22 @@ public class ControlButton implements ActionListener {
         for (ButtonV2 bv22 : fen.tableauBtnCentrale) {
             if (e.getSource() == bv22) {
                 // Faut differencier si on veut tuer ou acquerir la carte
-                int intRetourner=m.toucherAUneCarteCentraleM(m.trouverLaBonneCarteCentrale(bv22.getIdBouton()),m.p,m.joueurActuel());
-                if (intRetourner>0){
-                    String nomStocke = m.p.ligneCentrale[bv22.getIdBouton()].getNom() +" r"+m.p.ligneCentrale[bv22.getIdBouton()].getRunes()+ " d"+m.p.ligneCentrale[bv22.getIdBouton()].getAttaque();
-                    // fonction tuerUneCartecentrale
-                    fen.actualiserLigneCentrale(bv22,nomStocke);
-                    fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(),m);
-                    fen.actualiserPtsHonneur(m.joueurActuel(),m);
+                if (bannirUneCarteCentrale == false) {
+                    int intRetourner = m.toucherAUneCarteCentraleM(m.trouverLaBonneCarteCentrale(bv22.getIdBouton()), m.p, m.joueurActuel());
+                    if (intRetourner > 0) {
+                        String nomStocke = m.p.ligneCentrale[bv22.getIdBouton()].getNom() + " r" + m.p.ligneCentrale[bv22.getIdBouton()].getRunes() + " d" + m.p.ligneCentrale[bv22.getIdBouton()].getAttaque();
+                        // fonction tuerUneCartecentrale
+                        fen.actualiserLigneCentrale(bv22, nomStocke);
+                        fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(), m);
+                        fen.actualiserPtsHonneur(m.joueurActuel(), m);
+                    }
+                }
+                else {
+                    m.bannirUneCarteCentrale(bv22.getIdBouton());
+                    fen.actualiserLigneCentrale(bv22, m.p.ligneCentrale[bv22.getIdBouton()].getNom() + " r" + m.p.ligneCentrale[bv22.getIdBouton()].getRunes() + " d" + m.p.ligneCentrale[bv22.getIdBouton()].getAttaque());
+                    fen.actualiserRunesEtAttaqueJoueur(m.joueurActuel(), m);
+                    fen.actualiserPtsHonneur(m.joueurActuel(), m);
+                    bannirUneCarteCentrale=false;
                 }
             }
         }
@@ -103,7 +119,6 @@ public class ControlButton implements ActionListener {
         // les effets qui sont la influence la vue ou ont besoins d'une interaction avec la vue
         /**liste des effets : 0 1 2  -> piocher 1 2 3 cartes
          * 15 16  tuer un mostre avec 4 ou 6 D gratuitement
-         * 17 : bannir une carte centrale
          * 18 : se défausser d'une carte , si on le fait en pioche deux
          * 19 copy l'effet d'un héros jouer ce tour ci
          * 20 : une fois par tour vous piocher une carte
@@ -131,9 +146,23 @@ public class ControlButton implements ActionListener {
          * 48 Take a card at random from each oppenent's hand and add that card to your hands
          */
         switch (cards.getEffet()){
-            case 0:
-                fen.actualiserMain(m);
+//            case 0:
+//                fen.actualiserMain(m);
+//                m.joueurActuel().afficherLesCartesDansSonDeck();
+//                break;
+//            case 1:
+//                fen.actualiserMain2(m);
+//                break;
+//            case 2:
+//                fen.actualiserMain(m);
+//                break;//
+            case 17:             // 17 : bannir une carte centrale
+                System.out.print(bannirUneCarteCentrale);
+                this.bannirUneCarteCentrale=true;
+                System.out.print(bannirUneCarteCentrale);
+
                 break;
+
 
         }
 

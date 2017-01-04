@@ -153,7 +153,7 @@ public class Cards {
                System.out.println("DEfeat a monster that has 6 D or less without paying it cost");
                 break;
             case 17:
-                joueurQuiJoueLaCarte.deck.piocher(1);
+                //joueurQuiJoueLaCarte.deck.piocher(1);
                System.out.println(" You may banish a card in the center row");
                 break;
             case 18:

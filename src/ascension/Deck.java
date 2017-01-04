@@ -45,8 +45,10 @@ public class Deck extends ArrayList {
             if (list.size()==0){
                 remplirDeck();
             }
-            getHand().add(list.get(0));
-            getList().remove(0);
+            getHand().add(getList().get(0));
+
+            getList().remove(getList().get(0));
+
         }
     }
 
@@ -116,5 +118,9 @@ public class Deck extends ArrayList {
     }
 
 
-
+    public void afficherLesCartesDansSonDeck() {
+        for (Cards c : list){
+            c.print();
+        }
+    }
 }

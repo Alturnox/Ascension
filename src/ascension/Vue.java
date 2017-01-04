@@ -291,7 +291,7 @@ public class Vue extends JFrame {
 
     public void nettoyerTapis() {
         panelTapis.removeAll();
-        m.joueurActuel().piocherMain();
+//        m.joueurActuel().piocherMain();
 
         invalidate();
         validate();
@@ -324,6 +324,23 @@ public class Vue extends JFrame {
 
     public int positionBv2(ButtonV2 bv2) {
         return listeDeBoutons.indexOf(bv2);
+    }
+
+    public void actualiserMain2(Modele m) {
+        int tailleListe=0;
+        tailleListe=m.joueurActuel().getHand().size()-2;
+        carteMainJoueur=new ButtonV2(m.joueurActuel().getHand().get(tailleListe).getNom(),tailleListe);
+        listeDeBoutons.add(carteMainJoueur);
+        listeDeBoutons.get(tailleListe).addActionListener(cb);
+
+        tailleListe+=1;
+        carteMainJoueur=new ButtonV2(m.joueurActuel().getHand().get(tailleListe).getNom(),tailleListe);
+        listeDeBoutons.add(carteMainJoueur);
+        listeDeBoutons.get(tailleListe).addActionListener(cb);
+
+
+        panelMainJoueur.add(listeDeBoutons.get(tailleListe));
+
     }
 
 //    public void piocherUneMain() {

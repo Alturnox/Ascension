@@ -205,4 +205,8 @@ public class Joueur {
         }
 
     }
+
+    public void afficherLesCartesDansSonDeck() {
+        deck.afficherLesCartesDansSonDeck();
+    }
 }

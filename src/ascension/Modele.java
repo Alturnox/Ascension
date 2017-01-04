@@ -65,4 +65,8 @@ public class Modele extends JPanel {
             joueurActuel().attaqueDispo-=2;
         }
     }
+
+    public void bannirUneCarteCentrale(int idBouton) {
+        p.bannirUneCarteCentrale(idBouton);
+    }
 }
